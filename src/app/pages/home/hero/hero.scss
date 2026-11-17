@@ -1,0 +1,191 @@
+@use 'tokens' as *;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+
+  @include mobile {
+    height: auto;
+    min-height: 100svh;
+    overflow: visible;
+  }
+}
+
+.menu {
+  flex-shrink: 0;
+
+  @include mobile {
+    order: -1;
+  }
+}
+
+// Bühne: Foto links, Name rechts, Social-Icons ganz rechts (Figma: 1214 x 705)
+.stage {
+  position: relative;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 25px minmax(0, 535px) minmax(0, 1fr) 30px;
+  width: 100%;
+  max-width: 1214px;
+  min-height: 0;
+  margin: 0 auto;
+
+  @include tablet {
+    grid-template-columns: 0 minmax(0, 45%) minmax(0, 1fr) 30px;
+    padding: 0 32px;
+  }
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px 48px;
+  }
+}
+
+// ---------- Foto mit blauer Form ----------
+.portrait {
+  grid-column: 2;
+  position: relative;
+  align-self: end;
+  height: calc(100% - 22px);
+  max-height: 683px;
+
+  @include mobile {
+    align-self: center;
+    width: 267px;
+    height: 370px;
+    margin-top: 23px;
+  }
+}
+
+.blob {
+  position: absolute;
+  max-width: none;
+}
+
+.blob-desktop {
+  top: -12%;
+  left: -38%;
+  width: 157%;
+  height: auto;
+  aspect-ratio: 1;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+// Form wie in der mobilen Vorlage: 311 x 326, hinter dem Foto
+.blob-mobile {
+  display: none;
+  top: 43px;
+  left: 50%;
+  width: 311px;
+  height: 326px;
+  transform: translateX(-50%);
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.photo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+
+  @include mobile {
+    object-fit: cover;
+    object-position: center top;
+    // Unterkante folgt der blauen Form, oben darf der Kopf herausragen
+    -webkit-mask:
+      linear-gradient(#000, #000) top / 100% 50% no-repeat,
+      url('/icons/overlay-bg.svg') 50% 100% / 311px 326px no-repeat;
+    mask:
+      linear-gradient(#000, #000) top / 100% 50% no-repeat,
+      url('/icons/overlay-bg.svg') 50% 100% / 311px 326px no-repeat;
+  }
+}
+
+// ---------- Name, Rolle, Pfeil ----------
+.intro {
+  grid-column: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(24px, 17vh - 20px, 121px);
+  padding-left: 80px;
+  text-align: center;
+
+  @include tablet {
+    padding-left: 24px;
+  }
+
+  @include mobile {
+    padding: 24px 0 0;
+  }
+
+  h1 {
+    margin-top: clamp(12px, 5vh - 10px, 37px);
+    font-size: clamp(48px, 6.1vw, $fs-h1);
+    color: $color-creme;
+    white-space: nowrap;
+
+    @include mobile {
+      margin-top: 0;
+      font-size: 48px;
+      white-space: normal;
+    }
+  }
+
+  .role {
+    margin-top: 11px;
+    font-size: clamp(24px, 2.8vw, 40px);
+    color: $color-creme;
+    white-space: nowrap;
+
+    @include mobile {
+      margin-top: 4px;
+      font-size: 24px;
+    }
+  }
+}
+
+.intro-logo {
+  @include mobile {
+    display: none;
+  }
+}
+
+.scroll-down {
+  display: block;
+  margin-top: clamp(24px, 20vh - 40px, 145px);
+  border-radius: 30px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(6px);
+  }
+
+  @include mobile {
+    margin-top: 32px;
+  }
+}
+
+// ---------- Social-Icons rechts oben ----------
+.social {
+  grid-column: 4;
+  align-self: start;
+  margin-top: 68px;
+
+  @include mobile {
+    display: none;
+  }
+}

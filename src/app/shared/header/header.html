@@ -1,16 +1,50 @@
-<!-- Grundgerüst: Position und Gestaltung laut Figma folgen in Schritt 2 -->
-<header class="header">
-  <a routerLink="/" class="logo" aria-label="Startseite">GL</a>
-
-  <nav class="nav">
-    <a routerLink="/" fragment="why-me">{{ 'nav.whyMe' | translate }}</a>
-    <a routerLink="/" fragment="skills">{{ 'nav.skills' | translate }}</a>
-    <a routerLink="/" fragment="projects">{{ 'nav.projects' | translate }}</a>
-    <a routerLink="/" fragment="contact">{{ 'nav.contact' | translate }}</a>
-  </nav>
-
+<ng-template #langToggle>
   <div class="lang-toggle" role="group" aria-label="Sprache / Language">
-    <button type="button" [class.active]="language.current() === 'de'" (click)="language.set('de')">DE</button>
-    <button type="button" [class.active]="language.current() === 'en'" (click)="language.set('en')">EN</button>
+    <button type="button" [class.active]="language.current() === 'de'" [attr.aria-pressed]="language.current() === 'de'" (click)="language.set('de')">DE</button>
+    <button type="button" [class.active]="language.current() === 'en'" [attr.aria-pressed]="language.current() === 'en'" (click)="language.set('en')">EN</button>
   </div>
-</header>
+</ng-template>
+
+<!-- Desktop: blaue Menüleiste -->
+<div class="bar">
+  <div class="bar-inner">
+    <a routerLink="/" class="home-link" [attr.aria-label]="'nav.home' | translate">
+      <app-logo variant="dark" />
+    </a>
+    <nav class="nav" [attr.aria-label]="'nav.main' | translate">
+      @for (item of navItems; track item.fragment) {
+        <a routerLink="/" [fragment]="item.fragment">{{ item.label | translate }}</a>
+      }
+    </nav>
+    <ng-container *ngTemplateOutlet="langToggle" />
+  </div>
+</div>
+
+<!-- Mobile: Logo und Burger-Button -->
+<div class="topbar">
+  <a routerLink="/" class="home-link" [attr.aria-label]="'nav.home' | translate" (click)="closeMenu()">
+    <app-logo [compact]="true" />
+  </a>
+  <button
+    type="button"
+    class="burger"
+    [class.open]="menuOpen()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="mobile-menu"
+    [attr.aria-label]="(menuOpen() ? 'nav.closeMenu' : 'nav.openMenu') | translate"
+    (click)="toggleMenu()"
+  >
+    <span></span><span></span><span></span>
+  </button>
+
+  @if (menuOpen()) {
+    <div class="mobile-menu" id="mobile-menu">
+      <nav [attr.aria-label]="'nav.main' | translate">
+        @for (item of navItems; track item.fragment) {
+          <a routerLink="/" [fragment]="item.fragment" (click)="closeMenu()">{{ item.label | translate }}</a>
+        }
+      </nav>
+      <ng-container *ngTemplateOutlet="langToggle" />
+    </div>
+  }
+</div>

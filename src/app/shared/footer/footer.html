@@ -1,8 +1,17 @@
-<!-- Grundgerüst: Gestaltung laut Figma folgt in Schritt 2 -->
 <footer class="footer">
-  <div class="legal">
-    <a routerLink="/impressum">{{ 'footer.legalNotice' | translate }}</a>
-    <a routerLink="/datenschutz">{{ 'footer.privacy' | translate }}</a>
+  <div class="inner">
+    <div class="legal">
+      <nav class="legal-links" [attr.aria-label]="'footer.legalNav' | translate">
+        <a routerLink="/impressum">{{ 'footer.legalNotice' | translate }}</a>
+        <a routerLink="/datenschutz">{{ 'footer.privacy' | translate }}</a>
+      </nav>
+      <span class="copy">© Gabriele Lerch {{ year }}</span>
+    </div>
+
+    <a routerLink="/" class="logo-link" [attr.aria-label]="'nav.home' | translate">
+      <app-logo variant="dark" />
+    </a>
+
+    <app-social-links class="social" variant="dark" order="footer" />
   </div>
-  <span>© Gabriele Lerch {{ year }}</span>
 </footer>

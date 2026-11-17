@@ -1,4 +1,127 @@
-<!-- Inhalt folgt in Schritt 2 -->
-<section class="legal-page">
+<app-header />
+
+<article class="legal-page">
   <h1>{{ 'legal.title' | translate }}</h1>
-</section>
+
+  <div class="content">
+    @if (language.current() === 'de') {
+      <section>
+        <h2>Angaben gemäß § 5 DDG</h2>
+        <p>
+          Gabriele Lerch<br />
+          c/o MDC Management#4069<br />
+          Welserstraße 3<br />
+          87463 Dietmannsried<br />
+          Deutschland
+        </p>
+      </section>
+
+      <section>
+        <h2>Kontakt</h2>
+        <p>E-Mail: <a [href]="'mailto:' + links.email">{{ links.email }}</a></p>
+      </section>
+
+      <section>
+        <h2>Umsatzsteuer</h2>
+        <p>Kleinunternehmerin im Sinne von § 19 UStG, daher wird keine Umsatzsteuer ausgewiesen.</p>
+      </section>
+
+      <section>
+        <h2>Verantwortlich für den Inhalt</h2>
+        <p>Gabriele Lerch, Anschrift wie oben.</p>
+      </section>
+
+      <section>
+        <h2>Verbraucherstreitbeilegung</h2>
+        <p>Ich bin nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+      </section>
+
+      <section>
+        <h2>Haftung für Inhalte</h2>
+        <p>
+          Als Diensteanbieterin bin ich gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich.
+          Nach §§ 8 bis 10 DDG bin ich jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach
+          Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.
+        </p>
+      </section>
+
+      <section>
+        <h2>Haftung für Links</h2>
+        <p>
+          Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte ich keinen Einfluss habe. Für die Inhalte der verlinkten
+          Seiten ist stets der jeweilige Anbieter verantwortlich. Sobald mir Rechtsverletzungen bekannt werden, entferne ich solche Links umgehend.
+        </p>
+      </section>
+
+      <section>
+        <h2>Urheberrecht</h2>
+        <p>
+          Die Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Das Design dieser Website basiert auf einer Vorlage der
+          <a href="https://developerakademie.com" target="_blank" rel="noopener noreferrer">Developer Akademie GmbH</a>, die Rechte am Design
+          liegen bei ihr. Sofern Inhalte nicht von mir erstellt wurden, werden die Urheberrechte Dritter beachtet.
+        </p>
+        <p>Stand: November 2026</p>
+      </section>
+    } @else {
+      <section>
+        <h2>Information according to § 5 DDG (German Digital Services Act)</h2>
+        <p>
+          Gabriele Lerch<br />
+          c/o MDC Management#4069<br />
+          Welserstraße 3<br />
+          87463 Dietmannsried<br />
+          Germany
+        </p>
+      </section>
+
+      <section>
+        <h2>Contact</h2>
+        <p>Email: <a [href]="'mailto:' + links.email">{{ links.email }}</a></p>
+      </section>
+
+      <section>
+        <h2>VAT</h2>
+        <p>Small business according to § 19 of the German VAT Act (UStG), therefore no VAT is charged.</p>
+      </section>
+
+      <section>
+        <h2>Responsible for the content</h2>
+        <p>Gabriele Lerch, address as above.</p>
+      </section>
+
+      <section>
+        <h2>Consumer dispute resolution</h2>
+        <p>I am neither obliged nor willing to take part in dispute resolution proceedings before a consumer arbitration board.</p>
+      </section>
+
+      <section>
+        <h2>Liability for content</h2>
+        <p>
+          As a service provider, I am responsible for my own content on these pages in accordance with § 7 (1) DDG and general laws. According to
+          §§ 8 to 10 DDG, however, I am not obliged to monitor transmitted or stored third-party information or to investigate circumstances that
+          indicate illegal activity.
+        </p>
+      </section>
+
+      <section>
+        <h2>Liability for links</h2>
+        <p>
+          This website contains links to external third-party websites whose content I have no influence on. The respective provider is always
+          responsible for the content of linked pages. As soon as I become aware of any legal violations, I will remove such links immediately.
+        </p>
+      </section>
+
+      <section>
+        <h2>Copyright</h2>
+        <p>
+          The content and works on these pages are subject to German copyright law. The design of this website is based on a template by
+          <a href="https://developerakademie.com" target="_blank" rel="noopener noreferrer">Developer Akademie GmbH</a>, which owns the rights to
+          the design. Where content was not created by me, the copyrights of third parties are respected.
+        </p>
+        <p>Last updated: November 2026</p>
+      </section>
+    }
+
+    <a routerLink="/" class="btn btn-secondary back">{{ 'legal.back' | translate }}</a>
+  </div>
+</article>

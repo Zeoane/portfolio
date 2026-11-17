@@ -1,0 +1,29 @@
+<section class="hero">
+  <div class="stage">
+    <div class="portrait">
+      <img class="blob blob-desktop" src="icons/bg-shape.svg" alt="" width="923" height="923" />
+      <img class="blob blob-mobile" src="icons/overlay-bg.svg" alt="" width="311" height="326" />
+      <img
+        class="photo"
+        src="img/portrait-hero.webp"
+        alt="Gabriele Lerch"
+        width="900"
+        height="1096"
+        fetchpriority="high"
+      />
+    </div>
+
+    <div class="intro">
+      <app-logo class="intro-logo" />
+      <h1>Gabriele Lerch</h1>
+      <p class="role">{{ 'hero.role' | translate }}</p>
+      <a href="#why-me" class="scroll-down" [attr.aria-label]="'hero.scrollDown' | translate">
+        <img src="icons/arrow-down.svg" alt="" width="38" height="89" />
+      </a>
+    </div>
+
+    <app-social-links class="social" [vertical]="true" />
+  </div>
+
+  <app-header class="menu" />
+</section>

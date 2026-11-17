@@ -1,0 +1,81 @@
+<section id="projects" class="projects">
+  <h2>{{ 'projects.title' | translate }}</h2>
+
+  <div class="tabs-wrap">
+    <div class="tabs" role="tablist" [attr.aria-label]="'projects.title' | translate" (keydown)="onTabKey($event)">
+      @for (project of projects; track project.key; let i = $index) {
+        <button
+          type="button"
+          role="tab"
+          class="tab"
+          [id]="'project-tab-' + i"
+          [class.active]="i === activeIndex()"
+          [attr.aria-selected]="i === activeIndex()"
+          [attr.tabindex]="i === activeIndex() ? 0 : -1"
+          aria-controls="project-panel"
+          (click)="select(i)"
+        >
+          <span class="tab-desktop">{{ i + 1 }}. {{ project.name }}</span>
+          <span class="tab-mobile">{{ i + 1 }}. {{ 'projects.projectLabel' | translate }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  @let project = active();
+  <div class="panel" id="project-panel" role="tabpanel" [attr.aria-labelledby]="'project-tab-' + activeIndex()">
+    <div class="panel-inner">
+      <!-- Mobile: Name, Technologien und Dauer stehen oben -->
+      <div class="mobile-head">
+        <h3>{{ project.name }}</h3>
+        <p>{{ 'projects.technologies' | translate }}: {{ techList(project.technologies) }}</p>
+        <p>{{ 'projects.duration' | translate }}: {{ 'projects.' + project.key + '.duration' | translate }}</p>
+      </div>
+
+      <div class="info">
+        <article>
+          <h3>
+            <img src="icons/bullet.svg" alt="" width="29" height="26" />
+            {{ 'projects.about' | translate }}
+            <span class="duration">{{ 'projects.duration' | translate }}: {{ 'projects.' + project.key + '.duration' | translate }}</span>
+          </h3>
+          <p>{{ 'projects.' + project.key + '.about' | translate }}</p>
+        </article>
+        <article>
+          <h3><img src="icons/bullet.svg" alt="" width="29" height="26" />{{ 'projects.organisation' | translate }}</h3>
+          <p>{{ 'projects.' + project.key + '.organisation' | translate }}</p>
+        </article>
+        <article>
+          <h3><img src="icons/bullet.svg" alt="" width="29" height="26" />{{ 'projects.teamwork' | translate }}</h3>
+          <p>{{ 'projects.' + project.key + '.teamwork' | translate }}</p>
+        </article>
+      </div>
+
+      <div class="visual">
+        <div class="tech">
+          <p>{{ 'projects.technologies' | translate }}</p>
+          <ul>
+            @for (tech of project.technologies; track tech) {
+              <li>
+                <img [src]="'icons/skills/' + tech + '.svg'" [alt]="techName(tech)" [title]="techName(tech)" width="36" height="36" />
+              </li>
+            }
+          </ul>
+        </div>
+
+        <div class="screenshot">
+          @if (project.screenshot) {
+            <img [src]="project.screenshot" [alt]="'projects.screenshotAlt' | translate: { name: project.name }" width="960" height="540" loading="lazy" />
+          } @else {
+            <span>{{ 'projects.screenshotMissing' | translate }}</span>
+          }
+        </div>
+
+        <div class="buttons">
+          <a class="btn btn-primary" [href]="project.liveUrl" target="_blank" rel="noopener noreferrer">{{ 'projects.liveTest' | translate }}</a>
+          <a class="btn btn-secondary" [href]="project.githubUrl" target="_blank" rel="noopener noreferrer">{{ 'projects.github' | translate }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,117 @@
+<section id="contact" class="contact">
+  <div class="head">
+    <h2>{{ 'contact.title' | translate }}</h2>
+    <a href="#top" class="arrow-up arrow-up-desktop" [attr.aria-label]="'arrowUp' | translate">
+      <img src="icons/arrow-up.svg" alt="" width="38" height="89" />
+    </a>
+  </div>
+
+  <div class="intro">
+    <div class="intro-text">
+      <p>{{ 'contact.intro1' | translate }}</p>
+      <p>{{ 'contact.intro2' | translate }}</p>
+    </div>
+    <a class="mail" [href]="'mailto:' + links.email">
+      <img src="icons/contact-email.svg" alt="" width="27" height="30" />
+      <span>{{ 'contact.emailLabel' | translate }}: {{ links.email }}</span>
+    </a>
+  </div>
+
+  <p class="lets-work">{{ 'contact.letsWork' | translate }}</p>
+
+  <form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate name="contact">
+    <div class="row">
+      <div class="field">
+        <label for="contact-name">{{ 'contact.name' | translate }}</label>
+        <input
+          id="contact-name"
+          type="text"
+          formControlName="name"
+          autocomplete="name"
+          [placeholder]="'contact.namePlaceholder' | translate"
+          [class.invalid]="showError('name')"
+          [attr.aria-invalid]="showError('name')"
+          aria-describedby="contact-name-error"
+        />
+        <p class="error" id="contact-name-error" aria-live="polite">
+          @if (showError('name')) {
+            {{ 'contact.nameError' | translate }}
+          }
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="contact-email">{{ 'contact.email' | translate }}</label>
+        <input
+          id="contact-email"
+          type="email"
+          formControlName="email"
+          autocomplete="email"
+          [placeholder]="'contact.emailPlaceholder' | translate"
+          [class.invalid]="showError('email')"
+          [attr.aria-invalid]="showError('email')"
+          aria-describedby="contact-email-error"
+        />
+        <p class="error" id="contact-email-error" aria-live="polite">
+          @if (showError('email')) {
+            {{ 'contact.emailError' | translate }}
+          }
+        </p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="contact-message">{{ 'contact.message' | translate }}</label>
+      <textarea
+        id="contact-message"
+        formControlName="message"
+        [placeholder]="'contact.messagePlaceholder' | translate"
+        [class.invalid]="showError('message')"
+        [attr.aria-invalid]="showError('message')"
+        aria-describedby="contact-message-error"
+      ></textarea>
+      <p class="error" id="contact-message-error" aria-live="polite">
+        @if (showError('message')) {
+          {{ 'contact.messageError' | translate }}
+        }
+      </p>
+    </div>
+
+    <div class="privacy">
+      <label class="checkbox">
+        <input type="checkbox" formControlName="privacy" [class.invalid]="showError('privacy')" aria-describedby="contact-privacy-error" />
+        <span class="box" aria-hidden="true"></span>
+        <span>
+          {{ 'contact.privacyBefore' | translate }}
+          <a routerLink="/datenschutz">{{ 'contact.privacyLink' | translate }}</a>
+          {{ 'contact.privacyAfter' | translate }}
+        </span>
+      </label>
+      <p class="error" id="contact-privacy-error" aria-live="polite">
+        @if (showError('privacy')) {
+          {{ 'contact.privacyError' | translate }}
+        }
+      </p>
+    </div>
+
+    <div class="actions">
+      <p class="feedback" [class.success]="state() === 'success'" [class.failure]="state() === 'error'" role="status">
+        @switch (state()) {
+          @case ('success') {
+            {{ 'contact.success' | translate }}
+          }
+          @case ('error') {
+            {{ 'contact.failure' | translate }}
+          }
+        }
+      </p>
+      <button type="submit" class="send" [disabled]="form.invalid || state() === 'sending'">
+        {{ (state() === 'sending' ? 'contact.sending' : 'contact.send') | translate }}
+      </button>
+    </div>
+  </form>
+
+  <a href="#top" class="arrow-up arrow-up-mobile" [attr.aria-label]="'arrowUp' | translate">
+    <img src="icons/arrow-up.svg" alt="" width="38" height="89" />
+  </a>
+</section>

@@ -1,0 +1,22 @@
+<section class="references" aria-labelledby="references-title">
+  <h2 id="references-title">
+    <span class="title-desktop">{{ 'references.title' | translate }}</span>
+    <span class="title-mobile">{{ 'references.titleMobile' | translate }}</span>
+  </h2>
+  <p class="subtitle-mobile">{{ 'references.subtitleMobile' | translate }}</p>
+
+  <ul class="list">
+    @for (ref of references; track ref.key) {
+      <li class="card">
+        <h3>{{ 'references.' + ref.key + '.name' | translate }}</h3>
+        <p class="project">
+          {{ 'references.project' | translate }} <span>{{ ref.project }}</span>
+        </p>
+        <blockquote>{{ 'references.' + ref.key + '.text' | translate }}</blockquote>
+        @if (ref.linkedinUrl) {
+          <a [href]="ref.linkedinUrl" target="_blank" rel="noopener noreferrer">{{ 'references.linkedin' | translate }}</a>
+        }
+      </li>
+    }
+  </ul>
+</section>

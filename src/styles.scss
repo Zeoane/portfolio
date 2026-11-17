@@ -52,3 +52,54 @@ button {
   font: inherit;
   cursor: pointer;
 }
+
+// ---------- Buttons (Figma: Button Primary / Secondary) ----------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  padding: 13px 30px 10px;
+  border: 1px solid $color-blue;
+  border-radius: 30px;
+  font-family: $font-text;
+  font-size: $fs-p;
+  line-height: $line-height;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+
+  @include mobile {
+    height: 43px;
+    font-size: 14px;
+  }
+}
+
+.btn-primary {
+  background: $color-blue;
+  color: $color-dark;
+
+  &:hover {
+    background: transparent;
+    color: $color-blue;
+  }
+}
+
+.btn-secondary {
+  background: transparent;
+  color: $color-blue;
+
+  &:hover {
+    background: $color-blue;
+    color: $color-dark;
+  }
+}
+
+// Text nur für Screenreader
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

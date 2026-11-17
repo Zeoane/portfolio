@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
+import { Header } from '../../shared/header/header';
+import { LanguageService } from '../../language.service';
+import { LINKS } from '../../data/links';
 
 @Component({
   selector: 'app-legal-notice',
-  imports: [TranslatePipe],
+  imports: [RouterLink, TranslatePipe, Header],
   templateUrl: './legal-notice.html',
-  styleUrl: './legal-notice.scss',
+  styleUrl: '../legal-page.scss',
 })
-export class LegalNotice {}
+export class LegalNotice {
+  protected readonly language = inject(LanguageService);
+  protected readonly links = LINKS;
+}

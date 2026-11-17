@@ -1,9 +1,8 @@
-<!-- Platzhalter: Die Sektionen nach Figma folgen in Schritt 2 -->
-<section class="hero">
-  <h1>Gabriele Lerch</h1>
-  <p class="role">{{ 'hero.role' | translate }}</p>
-</section>
-<section id="why-me"></section>
-<section id="skills"></section>
-<section id="projects"></section>
-<section id="contact"></section>
+<app-hero id="top" />
+<app-why-me />
+<app-skills />
+<app-projects />
+@if (showReferences) {
+  <app-references />
+}
+<app-contact />

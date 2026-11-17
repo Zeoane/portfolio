@@ -1,0 +1,137 @@
+@use 'tokens' as *;
+
+.references {
+  padding-top: 110px;
+
+  @include mobile {
+    padding-top: 64px;
+  }
+}
+
+h2 {
+  padding: 0 16px;
+  font-family: $font-text;
+  font-size: 32px;
+  color: $color-blue;
+  text-align: center;
+
+  @include mobile {
+    font-family: $font-headline;
+    text-align: left;
+  }
+}
+
+.title-mobile,
+.subtitle-mobile {
+  display: none;
+}
+
+@include mobile {
+  .title-desktop {
+    display: none;
+  }
+
+  .title-mobile {
+    display: inline;
+  }
+
+  .subtitle-mobile {
+    display: block;
+    margin-top: 8px;
+    padding: 0 16px;
+  }
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  max-width: 1240px;
+  margin: 64px auto 0;
+  padding: 0 16px;
+  list-style: none;
+
+  @include tablet {
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    // Mobile: waagerecht wischen
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 32px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    padding-bottom: 8px;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 400px;
+  height: 400px;
+  padding: 80px 64px 0;
+  background: url('/icons/reference-bg.svg') center / contain no-repeat;
+  text-align: center;
+
+  @include mobile {
+    width: 290px;
+    height: 290px;
+    padding: 48px 36px 0;
+    scroll-snap-align: start;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  h3 {
+    font-family: $font-text;
+    font-size: 26px;
+    font-weight: 600;
+
+    @include mobile {
+      font-size: 22px;
+    }
+  }
+
+  .project {
+    margin-top: 4px;
+
+    @include mobile {
+      font-size: 16px;
+    }
+
+    span {
+      color: $color-blue;
+    }
+  }
+
+  blockquote {
+    margin-top: 24px;
+
+    @include mobile {
+      margin-top: 16px;
+      font-size: 16px;
+    }
+  }
+
+  a {
+    margin-top: auto;
+    margin-bottom: 72px;
+    font-size: 16px;
+    color: $color-blue;
+    text-decoration: underline;
+
+    @include mobile {
+      margin: 16px 0 0;
+    }
+
+    &:hover {
+      color: $color-creme;
+    }
+  }
+}

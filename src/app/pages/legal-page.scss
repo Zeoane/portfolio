@@ -1,0 +1,76 @@
+@use 'tokens' as *;
+
+// Gemeinsame Gestaltung für Impressum und Datenschutz (Figma: Legal Notice)
+
+.legal-page {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 72px 200px 120px;
+
+  @include tablet {
+    padding: 64px 32px 96px;
+  }
+
+  @include mobile {
+    padding: 40px 16px 64px;
+  }
+}
+
+h1 {
+  font-size: $fs-h2;
+  color: $color-blue;
+
+  @include mobile {
+    font-size: 32px;
+  }
+}
+
+.content {
+  max-width: 970px;
+  margin-top: 64px;
+  font-size: 16px;
+
+  @include mobile {
+    margin-top: 32px;
+  }
+
+  section + section {
+    margin-top: 32px;
+  }
+
+  h2 {
+    margin-bottom: 4px;
+    font-family: $font-text;
+    font-size: 22px;
+    font-weight: 600;
+    color: $color-blue;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  p + p,
+  p + ul,
+  ul + p {
+    margin-top: 12px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  a {
+    color: $color-blue;
+    word-break: break-word;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.back {
+  display: inline-flex;
+  margin-top: 48px;
+}

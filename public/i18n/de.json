@@ -3,19 +3,125 @@
     "whyMe": "Warum ich",
     "skills": "Skills",
     "projects": "Projekte",
-    "contact": "Kontakt"
+    "contact": "Kontakt",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "home": "Zur Startseite",
+    "main": "Hauptnavigation"
   },
   "hero": {
-    "role": "FRONTEND-ENTWICKLERIN"
+    "role": "FRONTEND-ENTWICKLERIN",
+    "scrollDown": "Nach unten scrollen"
+  },
+  "social": {
+    "email": "E-Mail schreiben",
+    "github": "GitHub-Profil",
+    "linkedin": "LinkedIn-Profil"
+  },
+  "whyMe": {
+    "title": "Warum ich",
+    "locationPrefix": "Ich bin",
+    "locationText": "remote in Deutschland tätig",
+    "text1": "Ich liebe es, aus einer Idee etwas zu bauen, das Menschen wirklich nutzen.",
+    "text2": "Vor dem Programmieren habe ich in sozialen Einrichtungen und der Gastronomie gearbeitet. Daher weiß ich, wie wichtig einfache, verständliche Oberflächen sind. Ich arbeite strukturiert, denke analytisch und bleibe dran, bis ein Problem gelöst ist, am liebsten im Team.",
+    "button": "Lass uns reden"
+  },
+  "skills": {
+    "title": "Meine Skills",
+    "learningTitle": "Was ich gerade lerne",
+    "learningText": "Ich bilde mich ständig weiter. Als Nächstes vertiefe ich React und Vue.js, um noch flexibler in Projekten einsteigen zu können."
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "projectLabel": "Projekt",
+    "about": "Über das Projekt",
+    "duration": "Dauer",
+    "organisation": "Wie ich meine Arbeit organisiert habe",
+    "teamwork": "Meine Erfahrung im Team",
+    "technologies": "Technologien",
+    "liveTest": "Live-Test",
+    "github": "GitHub",
+    "screenshotAlt": "Screenshot von {{name}}",
+    "screenshotMissing": "Screenshot folgt",
+    "dabubble": {
+      "duration": "[? Wochen]",
+      "about": "DABubble ist ein Messenger nach dem Vorbild von Slack. Teams schreiben in Kanälen, per Direktnachricht und in Threads, alles in Echtzeit.",
+      "organisation": "Ich habe die Oberfläche in wiederverwendbare Angular-Komponenten zerlegt und die Daten in Services gebündelt. Klare Namen und kurze Funktionen machen den Code für das ganze Team lesbar.",
+      "teamwork": "[ENTWURF] Wir haben die App zu dritt gebaut. Meine Aufgaben waren unter anderem die Anmeldung und die Kanalansicht. Wir haben mit Git-Branches und regelmäßigen Absprachen gearbeitet."
+    },
+    "join": {
+      "duration": "[? Wochen]",
+      "about": "Join ist ein Kanban-Board zur Aufgabenverwaltung mit Drag & Drop. In meiner Version werten n8n-Workflows eingehende E-Mails automatisch aus und legen daraus Aufgaben an.",
+      "organisation": "Funktionen sind in eigene Dateien nach Bereichen getrennt (Board, Kontakte, Dashboard). Daten liegen in Firebase, sodass Änderungen sofort für alle sichtbar sind.",
+      "teamwork": "[ENTWURF] Das Grundprojekt entstand im Team. Ich habe unter anderem das Board mit Drag & Drop umgesetzt und die E-Mail-Automatisierung mit n8n ergänzt."
+    },
+    "cuisine": {
+      "duration": "[? Wochen]",
+      "about": "Code à la Cuisine schlägt aus den Zutaten, die gerade im Kühlschrank sind, passende Rezepte vor. Die Vorschläge erzeugt eine KI.",
+      "organisation": "Ich habe das Projekt mit TypeScript typsicher aufgebaut und die Anfrage an die KI in einem eigenen Modul gekapselt, damit sie leicht austauschbar ist.",
+      "teamwork": "[ENTWURF] Wir haben uns Aufgaben über ein Kanban-Board aufgeteilt. Ich war unter anderem für die Zutatenauswahl und die Rezeptansicht zuständig."
+    },
+    "pollo": {
+      "duration": "[? Wochen]",
+      "about": "El Pollo Loco ist ein kurzweiliges Jump-and-Run-Spiel: Pepe springt über Hühner, sammelt Münzen und Flaschen und tritt am Ende gegen das Riesenhuhn an.",
+      "organisation": "Das Spiel ist objektorientiert aufgebaut. Jede Spielfigur ist eine eigene Klasse, die von gemeinsamen Basisklassen erbt. Gezeichnet wird mit dem HTML-Canvas.",
+      "teamwork": "[ENTWURF] Dieses Projekt habe ich allein umgesetzt. Feedback aus Code-Reviews habe ich genutzt, um Kollisionsabfrage und Animationen zu verbessern."
+    }
+  },
+  "references": {
+    "title": "Teamplayerin gesucht? Das sagen meine Kolleginnen und Kollegen über mich",
+    "titleMobile": "Teamplayerin gesucht?",
+    "subtitleMobile": "Das sagen meine Kolleginnen und Kollegen über mich",
+    "project": "Projekt",
+    "linkedin": "LinkedIn-Profil",
+    "r1": {
+      "name": "[Name Kollegin/Kollege 1]",
+      "text": "„[Hier kommt das echte Zitat aus deinem DABubble-Team hin.]“"
+    },
+    "r2": {
+      "name": "[Name Kollegin/Kollege 2]",
+      "text": "„[Hier kommt das echte Zitat aus deinem Join-Team hin.]“"
+    },
+    "r3": {
+      "name": "[Name Kollegin/Kollege 3]",
+      "text": "„[Hier kommt das echte Zitat aus deinem Code-à-la-Cuisine-Team hin.]“"
+    }
+  },
+  "contact": {
+    "title": "Kontakt",
+    "intro1": "Du hast ein spannendes Projekt oder suchst Verstärkung für dein Frontend-Team? Ich freue mich über deine Nachricht.",
+    "intro2": "Ich interessiere mich für Stellen als Frontend-Entwicklerin, gern remote oder hybrid, und für Freelance-Projekte mit Angular oder TypeScript.",
+    "letsWork": "Lass uns zusammenarbeiten!",
+    "emailLabel": "E-Mail",
+    "name": "Dein Name",
+    "email": "Deine E-Mail",
+    "message": "Deine Nachricht",
+    "namePlaceholder": "Dein Name",
+    "emailPlaceholder": "deine@email.de",
+    "messagePlaceholder": "Hallo Gabriele, ich interessiere mich für …",
+    "nameError": "Bitte gib deinen Namen ein.",
+    "emailError": "Bitte gib eine gültige E-Mail-Adresse ein.",
+    "messageError": "Bitte schreib mir eine Nachricht (mindestens 10 Zeichen).",
+    "privacyBefore": "Ich habe die",
+    "privacyLink": "Datenschutzerklärung",
+    "privacyAfter": "gelesen und bin mit der Verarbeitung meiner Daten wie beschrieben einverstanden.",
+    "privacyError": "Bitte stimme der Datenschutzerklärung zu.",
+    "send": "Senden",
+    "sending": "Wird gesendet …",
+    "success": "Danke für deine Nachricht! Ich melde mich so schnell wie möglich.",
+    "failure": "Das hat leider nicht geklappt. Bitte versuch es später noch einmal oder schreib mir direkt eine E-Mail."
   },
   "footer": {
     "legalNotice": "Impressum",
-    "privacy": "Datenschutz"
+    "privacy": "Datenschutz",
+    "legalNav": "Rechtliches"
   },
   "legal": {
-    "title": "Impressum"
+    "title": "Impressum",
+    "back": "Zurück zur Startseite"
   },
   "privacy": {
     "title": "Datenschutzerklärung"
-  }
+  },
+  "arrowUp": "Nach oben"
 }

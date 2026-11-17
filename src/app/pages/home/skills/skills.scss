@@ -1,0 +1,191 @@
+@use 'tokens' as *;
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(869px, 100% - 32px);
+  margin: 0 auto;
+  padding-top: 130px;
+
+  @include mobile {
+    width: min(344px, 100% - 32px);
+    padding-top: 64px;
+  }
+}
+
+h2 {
+  font-size: $fs-h2;
+  color: $color-blue;
+  text-align: center;
+
+  @include mobile {
+    font-size: 32px;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  margin-top: 80px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 32px;
+  }
+}
+
+// ---------- Icon-Raster ----------
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  width: 409px;
+  list-style: none;
+
+  @include mobile {
+    justify-content: center;
+    gap: 32px 34px;
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 72px;
+    text-align: center;
+
+    @include mobile {
+      width: 45px;
+    }
+  }
+
+  img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+
+    @include mobile {
+      width: 45px;
+      height: 45px;
+    }
+  }
+
+  li:hover img {
+    transform: translateY(-4px);
+  }
+
+  .label {
+    font-size: 18px;
+    white-space: nowrap;
+    color: $color-blue;
+
+    @include mobile {
+      // Mobile zeigt nur die Icons, Name bleibt für Screenreader erhalten
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
+}
+
+// ---------- "Was ich gerade lerne" in der Blase ----------
+.learning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 380px;
+  height: 380px;
+  padding: 81px 36px 0;
+  background: url('/icons/learning-bg.svg') center / contain no-repeat;
+  text-align: center;
+
+  @include mobile {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    background: none;
+  }
+}
+
+.learning-title {
+  font-size: 18px;
+  color: $color-creme;
+
+  @include mobile {
+    color: $color-blue;
+  }
+}
+
+.learning-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+
+  @include mobile {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    margin-top: 24px;
+  }
+}
+
+.learning-icons {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+
+  @include mobile {
+    flex-shrink: 0;
+    gap: 16px;
+    width: 104px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    background: url('/icons/learning-bg.svg') center / contain no-repeat;
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: $color-creme;
+  }
+}
+
+.learning-text {
+  width: 307px;
+  max-width: 100%;
+  color: $color-white;
+
+  @include mobile {
+    width: auto;
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+.mobile-cta {
+  display: none;
+  margin-top: 40px;
+
+  @include mobile {
+    display: inline-flex;
+  }
+}

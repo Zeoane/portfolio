@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  gap: 16px;
+}
+
+:host(.vertical) {
+  flex-direction: column;
+}
+
+a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+
+  &:hover {
+    transform: scale(1.15);
+  }
+}
+
+img {
+  display: block;
+}
+
+:host(.dark) a {
+  opacity: 0.6;
+
+  &:hover {
+    opacity: 1;
+  }
+}

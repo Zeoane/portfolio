@@ -1,0 +1,364 @@
+@use 'tokens' as *;
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  width: min(911px, 100% - 32px);
+  margin: 0 auto;
+  padding: 120px 0 180px;
+
+  @include mobile {
+    width: min(344px, 100% - 32px);
+    padding: 64px 0 56px;
+  }
+}
+
+// ---------- Überschrift mit Pfeil nach oben ----------
+.head {
+  position: relative;
+  text-align: center;
+
+  h2 {
+    font-size: 54px;
+    color: $color-blue;
+
+    @include mobile {
+      font-size: 32px;
+    }
+  }
+}
+
+.arrow-up {
+  display: block;
+  border-radius: 30px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-6px);
+  }
+}
+
+.arrow-up-desktop {
+  position: absolute;
+  top: -8px;
+  right: -98px;
+
+  @include tablet {
+    right: 0;
+  }
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.arrow-up-mobile {
+  display: none;
+  align-self: center;
+  margin-top: 48px;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+// ---------- Einleitung und E-Mail ----------
+.intro {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: 56px;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    gap: 24px;
+    margin-top: 32px;
+  }
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 429px;
+  max-width: 100%;
+  text-align: justify;
+  hyphens: auto;
+
+  @include mobile {
+    width: auto;
+    font-size: 16px;
+    text-align: left;
+  }
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  align-self: flex-start;
+  margin-right: 60px;
+  font-size: 20px;
+  transition: color 0.2s ease;
+
+  @include tablet {
+    margin-right: 0;
+  }
+
+  @include mobile {
+    font-size: 16px;
+    word-break: break-all;
+  }
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.lets-work {
+  display: none;
+
+  @include mobile {
+    display: block;
+    margin-top: 32px;
+    font-size: 20px;
+    color: $color-blue;
+    text-align: center;
+  }
+}
+
+// ---------- Formular ----------
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 56px;
+
+  @include mobile {
+    margin-top: 24px;
+  }
+}
+
+.row {
+  display: flex;
+  gap: 21px;
+
+  @include mobile {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .field {
+    flex: 1;
+  }
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    padding-left: 27px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: $color-blue;
+
+    @include mobile {
+      // Mobile zeigt den Platzhalter im Feld statt der Beschriftung darüber
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+    }
+  }
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  width: 100%;
+  height: 60px;
+  padding: 18px 27px 16px;
+  border: 1px solid $color-blue;
+  border-radius: 30px;
+  background: transparent;
+  color: $color-creme;
+  font-family: $font-text;
+  font-size: 18px;
+  line-height: $line-height;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  @include mobile {
+    height: 52px;
+    font-size: 16px;
+  }
+
+  &::placeholder {
+    // Desktop: Beschriftung steht über dem Feld, Platzhalter erst beim Fokus
+    color: transparent;
+    transition: color 0.2s ease;
+
+    @include mobile {
+      color: rgba($color-creme, 0.5);
+    }
+  }
+
+  &:focus::placeholder {
+    color: rgba($color-creme, 0.5);
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $color-creme;
+  }
+
+  &.invalid {
+    border-color: $color-error;
+  }
+
+  // Autofill vom Browser: Farben des Designs behalten (DA-Checkliste)
+  &:-webkit-autofill,
+  &:-webkit-autofill:hover,
+  &:-webkit-autofill:focus {
+    -webkit-text-fill-color: $color-creme;
+    caret-color: $color-creme;
+    box-shadow: 0 0 0 1000px $color-dark inset;
+    transition: background-color 9999s ease-in-out 0s;
+  }
+}
+
+textarea {
+  height: 146px;
+  resize: vertical;
+  min-height: 100px;
+
+  @include mobile {
+    height: 196px;
+  }
+}
+
+// Fester Platz für Fehlermeldungen, damit nichts verrutscht
+.error {
+  min-height: 20px;
+  padding: 2px 0 0 27px;
+  font-size: 14px;
+  color: $color-error;
+
+  @include mobile {
+    padding-left: 16px;
+    font-size: 12px;
+  }
+}
+
+// ---------- Checkbox Datenschutz ----------
+.privacy {
+  margin-top: 4px;
+
+  .error {
+    padding-left: 36px;
+  }
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+
+  .box {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    background: url('/icons/checkbox-default.svg') center / contain no-repeat;
+  }
+
+  &:hover .box {
+    background-image: url('/icons/checkbox-hover.svg');
+  }
+
+  input.invalid + .box {
+    background-image: url('/icons/checkbox-error.svg');
+  }
+
+  input:checked + .box {
+    background-image: url('/icons/checkbox-checked.svg');
+  }
+
+  input:focus-visible + .box {
+    outline: 2px solid $color-creme;
+    outline-offset: 2px;
+    border-radius: 50%;
+  }
+
+  a {
+    color: $color-blue;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// ---------- Senden und Rückmeldung ----------
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 12px;
+
+  @include mobile {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    gap: 12px;
+  }
+}
+
+.feedback {
+  flex: 1;
+  min-height: 22px;
+  font-size: 16px;
+
+  &.success {
+    color: $color-blue;
+  }
+
+  &.failure {
+    color: $color-error;
+  }
+}
+
+.send {
+  height: 48px;
+  padding: 13px 30px 10px;
+  border: 1px solid $color-creme;
+  border-radius: 30px;
+  background: transparent;
+  color: $color-creme;
+  font-size: 18px;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+
+  @include mobile {
+    height: 43px;
+    font-size: 14px;
+  }
+
+  &:hover:not(:disabled) {
+    background: $color-creme;
+    color: $color-dark;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
