@@ -15,8 +15,9 @@
       <p class="learning-title">{{ 'skills.learningTitle' | translate }}</p>
       <div class="learning-body">
         <ul class="learning-icons">
-          <li><img src="icons/learn-react.svg" alt="" width="32" height="32" /><span>React</span></li>
-          <li><img src="icons/learn-vue.svg" alt="" width="32" height="32" /><span>Vue.js</span></li>
+          @for (item of learning; track item.icon) {
+            <li><img [src]="'icons/learn-' + item.icon + '.svg'" alt="" width="32" height="32" /><span>{{ item.name }}</span></li>
+          }
         </ul>
         <p class="learning-text">{{ 'skills.learningText' | translate }}</p>
       </div>

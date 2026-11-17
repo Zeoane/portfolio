@@ -146,15 +146,16 @@ h2 {
 
 .learning-icons {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   list-style: none;
 
   @include mobile {
     flex-shrink: 0;
-    gap: 16px;
-    width: 104px;
-    height: 100px;
-    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    width: 128px;
+    height: 128px;
+    align-content: center;
     justify-content: center;
     background: url('/icons/learning-bg.svg') center / contain no-repeat;
   }
@@ -166,6 +167,16 @@ h2 {
     gap: 4px;
     font-size: 14px;
     color: $color-creme;
+
+    @include mobile {
+      width: 40px;
+      font-size: 12px;
+
+      img {
+        width: 26px;
+        height: 26px;
+      }
+    }
   }
 }
 

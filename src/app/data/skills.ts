@@ -16,3 +16,11 @@ export const SKILLS: Skill[] = [
   { name: 'Material Design', icon: 'material-design' },
   { name: 'Scrum', icon: 'scrum' },
 ];
+
+/** "Was ich gerade lerne". Icons liegen in public/icons als learn-<icon>.svg */
+export const LEARNING: Skill[] = [
+  { name: 'Python', icon: 'python' },
+  { name: 'Django', icon: 'django' },
+  { name: 'DRF', icon: 'drf' },
+  { name: 'Linux', icon: 'linux' },
+];
