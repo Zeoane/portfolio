@@ -1,0 +1,54 @@
+@use 'tokens' as *;
+
+// Schriften (Anta, Josefin Sans) liegen lokal im Projekt und werden über angular.json geladen,
+// nicht von Google-Servern. Das ist DSGVO-freundlich.
+
+:root {
+  --color-dark: #{$color-dark};
+  --color-blue: #{$color-blue};
+  --color-creme: #{$color-creme};
+  --color-white: #{$color-white};
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $color-dark;
+  color: $color-creme;
+  font-family: $font-text;
+  font-size: $fs-p;
+  line-height: $line-height;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-headline;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}

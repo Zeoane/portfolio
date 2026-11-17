@@ -1,0 +1,14 @@
+import { Component, inject } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LanguageService } from '../../language.service';
+
+@Component({
+  selector: 'app-header',
+  imports: [RouterLink, TranslatePipe],
+  templateUrl: './header.html',
+  styleUrl: './header.scss',
+})
+export class Header {
+  protected language = inject(LanguageService);
+}

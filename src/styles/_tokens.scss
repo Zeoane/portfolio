@@ -1,0 +1,38 @@
+// Design-Tokens aus Figma (Portfolio, Version 2 / "Version 5" Variablen)
+
+// Farben
+$color-dark: #262e34; // Primary dark grey (Hintergrund)
+$color-blue: #89bcd9; // Primary blue (Akzent)
+$color-creme: #f8f5ec; // Creme-white (Text)
+$color-white: #fffdfd;
+
+// Schriften
+$font-headline: 'Anta', sans-serif;
+$font-text: 'Josefin Sans', sans-serif;
+
+// Schriftgrößen Desktop
+$fs-h1: 88px; // Name im Hero
+$fs-h2: 60px; // Sektions-Überschriften
+$fs-p: 18px; // Fließtext und Button-Text
+$fs-small: 14px;
+$line-height: 1.2;
+
+// Layout
+$content-max-width: 1440px;
+$content-padding-x: 112px; // seitlicher Abstand im Desktop-Mockup
+
+// Breakpoints
+$bp-tablet: 1024px;
+$bp-mobile: 600px;
+
+@mixin tablet {
+  @media (max-width: $bp-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $bp-mobile) {
+    @content;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "whyMe": "Warum ich",
+    "skills": "Skills",
+    "projects": "Projekte",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "role": "FRONTEND-ENTWICKLERIN"
+  },
+  "footer": {
+    "legalNotice": "Impressum",
+    "privacy": "Datenschutz"
+  },
+  "legal": {
+    "title": "Impressum"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung"
+  }
+}

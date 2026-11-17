@@ -1,0 +1,22 @@
+@use 'tokens' as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 32px $content-padding-x;
+  background: $color-blue;
+  color: $color-dark;
+  font-size: $fs-small;
+
+  @include tablet {
+    padding: 32px;
+  }
+}
+
+.legal {
+  display: flex;
+  gap: 24px;
+}

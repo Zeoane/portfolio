@@ -1,0 +1,49 @@
+@use 'tokens' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: $content-max-width;
+  margin: 0 auto;
+  padding: 16px $content-padding-x;
+
+  @include tablet {
+    padding: 16px 32px;
+  }
+}
+
+.logo {
+  font-family: $font-headline;
+  font-size: 32px;
+  color: $color-blue;
+}
+
+.nav {
+  display: flex;
+  gap: 48px;
+
+  @include mobile {
+    display: none; // Burger-Menü folgt in Schritt 2
+  }
+}
+
+.lang-toggle {
+  display: flex;
+  border: 1px solid $color-blue;
+  border-radius: 20px;
+  overflow: hidden;
+
+  button {
+    padding: 4px 12px;
+    border: none;
+    background: transparent;
+    color: $color-creme;
+
+    &.active {
+      background: $color-blue;
+      color: $color-dark;
+    }
+  }
+}

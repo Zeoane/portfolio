@@ -1,0 +1,16 @@
+<!-- Grundgerüst: Position und Gestaltung laut Figma folgen in Schritt 2 -->
+<header class="header">
+  <a routerLink="/" class="logo" aria-label="Startseite">GL</a>
+
+  <nav class="nav">
+    <a routerLink="/" fragment="why-me">{{ 'nav.whyMe' | translate }}</a>
+    <a routerLink="/" fragment="skills">{{ 'nav.skills' | translate }}</a>
+    <a routerLink="/" fragment="projects">{{ 'nav.projects' | translate }}</a>
+    <a routerLink="/" fragment="contact">{{ 'nav.contact' | translate }}</a>
+  </nav>
+
+  <div class="lang-toggle" role="group" aria-label="Sprache / Language">
+    <button type="button" [class.active]="language.current() === 'de'" (click)="language.set('de')">DE</button>
+    <button type="button" [class.active]="language.current() === 'en'" (click)="language.set('en')">EN</button>
+  </div>
+</header>

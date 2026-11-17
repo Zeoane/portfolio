@@ -1,0 +1,21 @@
+{
+  "nav": {
+    "whyMe": "Why me",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "FRONTEND DEVELOPER"
+  },
+  "footer": {
+    "legalNotice": "Legal notice",
+    "privacy": "Privacy policy"
+  },
+  "legal": {
+    "title": "Legal notice"
+  },
+  "privacy": {
+    "title": "Privacy policy"
+  }
+}
