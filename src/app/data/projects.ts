@@ -6,12 +6,21 @@ export interface Project {
   technologies: string[];
   /** Pfad zum Screenshot in public/img, leer solange noch keiner da ist */
   screenshot: string;
+  /** Leer lassen, solange es noch keinen Live-Test gibt. Dann wird kein Button angezeigt. */
   liveUrl: string;
+  /** Leer lassen, solange das Repository noch nicht öffentlich ist. */
   githubUrl: string;
+  /** false = Projekt wird nicht angezeigt (zum Ausblenden, ohne etwas zu löschen) */
+  show: boolean;
+  /** true = aktuelles Projekt, an dem noch gearbeitet wird */
+  ongoing?: boolean;
 }
 
-/** Reihenfolge der Tabs: DABubble, Join, Code à la Cuisine, El Pollo Loco */
-export const PROJECTS: Project[] = [
+/**
+ * Alle Projekte in der Reihenfolge der Tabs.
+ * Ein- und ausblenden über "show". Die Nummern der Tabs passen sich automatisch an.
+ */
+export const ALL_PROJECTS: Project[] = [
   {
     key: 'dabubble',
     name: 'DABubble',
@@ -19,6 +28,7 @@ export const PROJECTS: Project[] = [
     screenshot: '',
     liveUrl: 'https://dabubble.gabriele-lerch.dev',
     githubUrl: 'https://github.com/Zeoane',
+    show: true,
   },
   {
     key: 'join',
@@ -27,6 +37,7 @@ export const PROJECTS: Project[] = [
     screenshot: 'img/project-join.webp',
     liveUrl: 'https://join.gabriele-lerch.dev',
     githubUrl: 'https://github.com/Zeoane/Join-Issue-Collector',
+    show: true,
   },
   {
     key: 'cuisine',
@@ -35,6 +46,8 @@ export const PROJECTS: Project[] = [
     screenshot: 'img/project-cuisine.webp',
     liveUrl: 'https://cuisine.gabriele-lerch.dev',
     githubUrl: 'https://github.com/Zeoane/Code-Cuisine',
+    // Noch offen, ob es im Portfolio bleibt. Zum Ausblenden auf false setzen.
+    show: true,
   },
   {
     key: 'pollo',
@@ -43,5 +56,20 @@ export const PROJECTS: Project[] = [
     screenshot: '',
     liveUrl: 'https://pollo-loco.gabriele-lerch.dev',
     githubUrl: 'https://github.com/Zeoane',
+    show: true,
+  },
+  {
+    key: 'kanmind',
+    name: 'KanMind',
+    technologies: ['python', 'django', 'drf', 'rest-api'],
+    screenshot: '',
+    // Backend-Projekt, das Frontend kommt von der Developer Akademie. Links eintragen, sobald vorhanden.
+    liveUrl: '',
+    githubUrl: '',
+    show: true,
+    ongoing: true,
   },
 ];
+
+/** Nur die sichtbaren Projekte */
+export const PROJECTS: Project[] = ALL_PROJECTS.filter((project) => project.show);

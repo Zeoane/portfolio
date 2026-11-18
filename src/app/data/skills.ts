@@ -24,3 +24,10 @@ export const LEARNING: Skill[] = [
   { name: 'DRF', icon: 'drf' },
   { name: 'Linux', icon: 'linux' },
 ];
+
+/** Anzeigenamen für Technologie-Icons in den Projekten (zusätzlich zu SKILLS) */
+export const TECH_NAMES: Record<string, string> = {
+  python: 'Python',
+  django: 'Django',
+  drf: 'Django REST Framework',
+};

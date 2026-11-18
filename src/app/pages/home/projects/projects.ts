@@ -1,7 +1,7 @@
 import { Component, computed, signal } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { PROJECTS } from '../../../data/projects';
-import { SKILLS } from '../../../data/skills';
+import { SKILLS, TECH_NAMES } from '../../../data/skills';
 
 @Component({
   selector: 'app-projects',
@@ -16,7 +16,7 @@ export class Projects {
 
   /** Anzeigename einer Technologie, z. B. "typescript" -> "TypeScript" */
   protected techName(icon: string): string {
-    return SKILLS.find((skill) => skill.icon === icon)?.name ?? icon;
+    return SKILLS.find((skill) => skill.icon === icon)?.name ?? TECH_NAMES[icon] ?? icon;
   }
 
   protected techList(icons: string[]): string {

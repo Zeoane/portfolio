@@ -66,6 +66,15 @@
       "about": "El Pollo Loco ist ein kurzweiliges Jump-and-Run-Spiel: Pepe springt über Hühner, sammelt Münzen und Flaschen und tritt am Ende gegen das Riesenhuhn an.",
       "organisation": "Das Spiel ist objektorientiert aufgebaut. Jede Spielfigur ist eine eigene Klasse, die von gemeinsamen Basisklassen erbt. Gezeichnet wird mit dem HTML-Canvas.",
       "teamwork": "[ENTWURF] Dieses Projekt habe ich allein umgesetzt. Feedback aus Code-Reviews habe ich genutzt, um Kollisionsabfrage und Animationen zu verbessern."
+    },
+    "ongoing": "in Arbeit",
+    "ongoingScreenshot": "Aktuelles Projekt, Screenshot folgt",
+    "linksSoon": "Live-Test und GitHub folgen, sobald das Projekt fertig ist.",
+    "kanmind": {
+      "duration": "läuft gerade",
+      "about": "KanMind ist ein Projektmanagement-Tool mit Kanban-Boards. Das Frontend stellt die Developer Akademie bereit, ich entwickle das Backend: eine REST-API, die Boards, Aufgaben und Kommentare speichert und das Frontend nahtlos mit den Daten verbindet.",
+      "organisation": "[ENTWURF] Ich plane die Datenmodelle zuerst, baue die API mit Django REST Framework in klar getrennten Apps auf und sichere jeden Endpunkt mit Berechtigungen ab. Tests begleiten jede neue Funktion.",
+      "teamwork": "[ENTWURF] Dieses Projekt setze ich allein um. Die Schnittstellen richte ich an der vorgegebenen API-Dokumentation aus, damit das Frontend der Developer Akademie ohne Anpassungen funktioniert."
     }
   },
   "references": {
