@@ -78,9 +78,11 @@ button {
   background: $color-blue;
   color: $color-dark;
 
+  // Figma: Hover = Creme-Fläche
   &:hover {
-    background: transparent;
-    color: $color-blue;
+    background: $color-creme;
+    border-color: $color-creme;
+    color: $color-dark;
   }
 }
 
@@ -88,9 +90,9 @@ button {
   background: transparent;
   color: $color-blue;
 
+  // Figma: Hover = leichte Creme-Fläche (12 %)
   &:hover {
-    background: $color-blue;
-    color: $color-dark;
+    background: rgba($color-creme, 0.12);
   }
 }
 

@@ -1,21 +1,20 @@
 @if (order() === 'footer') {
-  <ng-container *ngTemplateOutlet="github" />
-  <ng-container *ngTemplateOutlet="email" />
+  <ng-container *ngTemplateOutlet="link; context: { $implicit: 'github' }" />
+  <ng-container *ngTemplateOutlet="link; context: { $implicit: 'email' }" />
 } @else {
-  <ng-container *ngTemplateOutlet="email" />
-  <ng-container *ngTemplateOutlet="github" />
+  <ng-container *ngTemplateOutlet="link; context: { $implicit: 'email' }" />
+  <ng-container *ngTemplateOutlet="link; context: { $implicit: 'github' }" />
 }
-<a [href]="links.linkedin" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'social.linkedin' | translate">
-  <img [src]="icon('linkedin')" alt="" width="30" height="30" />
-</a>
+<ng-container *ngTemplateOutlet="link; context: { $implicit: 'linkedin' }" />
 
-<ng-template #email>
-  <a [href]="'mailto:' + links.email" [attr.aria-label]="'social.email' | translate">
-    <img [src]="icon('email')" alt="" width="30" height="30" />
-  </a>
-</ng-template>
-<ng-template #github>
-  <a [href]="links.github" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'social.github' | translate">
-    <img [src]="icon('github')" alt="" width="30" height="30" />
+<ng-template #link let-name>
+  <a
+    [href]="href(name)"
+    [attr.target]="name === 'email' ? null : '_blank'"
+    [attr.rel]="name === 'email' ? null : 'noopener noreferrer'"
+    [attr.aria-label]="'social.' + name | translate"
+  >
+    <img class="icon-default" [src]="icon(name)" alt="" width="30" height="30" />
+    <img class="icon-hover" [src]="icon(name, true)" alt="" width="30" height="30" />
   </a>
 </ng-template>

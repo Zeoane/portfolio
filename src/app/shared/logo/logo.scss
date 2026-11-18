@@ -12,6 +12,13 @@
   width: 32px;
   height: 38px;
   margin-bottom: 2px;
+  transition: transform 0.25s ease;
+}
+
+// Figma: Logo-Icon wird beim Hover etwas breiter
+:host(:hover) .icon,
+:host-context(a:hover) .icon {
+  transform: scaleX(1.12);
 }
 
 .name {

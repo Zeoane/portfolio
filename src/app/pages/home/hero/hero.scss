@@ -69,6 +69,7 @@
 }
 
 .blob-desktop {
+  transition: transform 0.5s ease, filter 0.5s ease;
   top: -12%;
   left: -38%;
   width: 157%;
@@ -78,6 +79,12 @@
   @include mobile {
     display: none;
   }
+}
+
+// Figma: Hover über dem Foto dreht die Form und macht sie etwas dunkler
+.portrait:hover .blob-desktop {
+  transform: rotate(18deg);
+  filter: brightness(0.86) saturate(1.15);
 }
 
 // Form wie in der mobilen Vorlage: 311 x 326, hinter dem Foto
@@ -167,11 +174,30 @@
 .scroll-down {
   display: block;
   margin-top: clamp(24px, 20vh - 40px, 145px);
-  border-radius: 30px;
-  transition: transform 0.2s ease;
+  // Rahmen per CSS statt im SVG: CSS-Rahmen rastet auf ganze Bildschirmpixel ein,
+  // dadurch wirken die geraden Seiten nicht mehr heller/verwaschen.
+  position: relative;
+  width: 38px;
+  height: 89px;
+  border-radius: 19px;
 
+  img {
+    display: block;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid $color-blue;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  transition: background-color 0.2s ease;
+
+  // Figma: Hover = leichte Creme-Fläche im Pfeil
   &:hover {
-    transform: translateY(6px);
+    background: rgba($color-creme, 0.12);
   }
 
   @include mobile {

@@ -30,11 +30,31 @@
 
 .arrow-up {
   display: block;
-  border-radius: 30px;
-  transition: transform 0.2s ease;
+  // Rahmen per CSS statt im SVG: CSS-Rahmen rastet auf ganze Bildschirmpixel ein,
+  // dadurch wirken die geraden Seiten nicht mehr heller/verwaschen.
+  position: relative;
+  width: 38px;
+  height: 89px;
+  border-radius: 19px;
 
+  img {
+    display: block;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px solid $color-blue;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  transition: background-color 0.2s ease;
+
+  // Figma: Hover = leichte Creme-Fläche im Pfeil
   &:hover {
-    transform: translateY(-6px);
+    background: rgba($color-creme, 0.12);
   }
 }
 
@@ -110,8 +130,30 @@
     word-break: break-all;
   }
 
+  // Figma: Hover = Text und Icon blau, Icon gefüllt
   &:hover {
     color: $color-blue;
+
+    .mail-icon .hover {
+      opacity: 1;
+    }
+  }
+}
+
+.mail-icon {
+  position: relative;
+  flex-shrink: 0;
+  width: 27px;
+  height: 30px;
+
+  img {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hover {
+    opacity: 0;
+    transition: opacity 0.2s ease;
   }
 }
 
@@ -208,13 +250,17 @@ textarea {
     color: rgba($color-creme, 0.5);
   }
 
-  &:hover,
+  // Figma "click": Feld wird leicht blau hinterlegt
   &:focus {
-    border-color: $color-creme;
+    background: rgba($color-blue, 0.12);
   }
 
   &.invalid {
     border-color: $color-error;
+  }
+
+  &:not(textarea) {
+    padding-right: 56px;
   }
 
   // Autofill vom Browser: Farben des Designs behalten (DA-Checkliste)
@@ -235,6 +281,24 @@ textarea {
 
   @include mobile {
     height: 196px;
+  }
+}
+
+// Haken bei gültiger Eingabe (Figma "done")
+.input-wrap {
+  position: relative;
+
+  .done {
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  textarea + .done {
+    top: 18px;
+    transform: none;
   }
 }
 
@@ -301,9 +365,11 @@ textarea {
 
   a {
     color: $color-blue;
+    transition: color 0.2s ease;
 
+    // Figma: Link wird beim Hover creme
     &:hover {
-      text-decoration: underline;
+      color: $color-creme;
     }
   }
 }
@@ -340,10 +406,10 @@ textarea {
 .send {
   height: 48px;
   padding: 13px 30px 10px;
-  border: 1px solid $color-creme;
+  border: 1px solid $color-blue;
   border-radius: 30px;
   background: transparent;
-  color: $color-creme;
+  color: $color-blue;
   font-size: 18px;
   transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
 
@@ -352,12 +418,15 @@ textarea {
     font-size: 14px;
   }
 
+  // Wie Button Secondary: leichte Creme-Fläche beim Hover
   &:hover:not(:disabled) {
-    background: $color-creme;
-    color: $color-dark;
+    background: rgba($color-creme, 0.12);
   }
 
+  // Figma "inactive": creme Rahmen, halb transparent
   &:disabled {
+    border-color: $color-creme;
+    color: $color-creme;
     opacity: 0.5;
     cursor: not-allowed;
   }

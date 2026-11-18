@@ -69,10 +69,33 @@ h2 {
     transform: scale(0.75);
   }
 
-  .shadow {
+  img {
     position: absolute;
+    inset: 0;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .shadow {
+    inset: auto;
     top: 43px;
     left: 25px;
+  }
+
+  // Figma: Blase und Schatten erscheinen erst beim Hover
+  .pin-bg,
+  .shadow {
+    opacity: 0;
+  }
+}
+
+.location:hover .pin {
+  .pin-bg,
+  .shadow {
+    opacity: 1;
+  }
+
+  .pin-icon {
+    transform: translateY(-3px);
   }
 }
 

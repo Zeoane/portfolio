@@ -12,7 +12,10 @@
       <p>{{ 'contact.intro2' | translate }}</p>
     </div>
     <a class="mail" [href]="'mailto:' + links.email">
-      <img src="icons/contact-email.svg" alt="" width="27" height="30" />
+      <span class="mail-icon" aria-hidden="true">
+        <img src="icons/contact-email.svg" alt="" width="27" height="30" />
+        <img class="hover" src="icons/contact-email-hover.svg" alt="" width="27" height="30" />
+      </span>
       <span>{{ 'contact.emailLabel' | translate }}: {{ links.email }}</span>
     </a>
   </div>
@@ -23,16 +26,21 @@
     <div class="row">
       <div class="field">
         <label for="contact-name">{{ 'contact.name' | translate }}</label>
-        <input
-          id="contact-name"
-          type="text"
-          formControlName="name"
-          autocomplete="name"
-          [placeholder]="'contact.namePlaceholder' | translate"
-          [class.invalid]="showError('name')"
-          [attr.aria-invalid]="showError('name')"
-          aria-describedby="contact-name-error"
-        />
+        <div class="input-wrap">
+          <input
+            id="contact-name"
+            type="text"
+            formControlName="name"
+            autocomplete="name"
+            [placeholder]="'contact.namePlaceholder' | translate"
+            [class.invalid]="showError('name')"
+            [attr.aria-invalid]="showError('name')"
+            aria-describedby="contact-name-error"
+          />
+          @if (isDone('name')) {
+            <img class="done" src="icons/input-done.svg" alt="" width="27" height="32" />
+          }
+        </div>
         <p class="error" id="contact-name-error" aria-live="polite">
           @if (showError('name')) {
             {{ 'contact.nameError' | translate }}
@@ -42,16 +50,21 @@
 
       <div class="field">
         <label for="contact-email">{{ 'contact.email' | translate }}</label>
-        <input
-          id="contact-email"
-          type="email"
-          formControlName="email"
-          autocomplete="email"
-          [placeholder]="'contact.emailPlaceholder' | translate"
-          [class.invalid]="showError('email')"
-          [attr.aria-invalid]="showError('email')"
-          aria-describedby="contact-email-error"
-        />
+        <div class="input-wrap">
+          <input
+            id="contact-email"
+            type="email"
+            formControlName="email"
+            autocomplete="email"
+            [placeholder]="'contact.emailPlaceholder' | translate"
+            [class.invalid]="showError('email')"
+            [attr.aria-invalid]="showError('email')"
+            aria-describedby="contact-email-error"
+          />
+          @if (isDone('email')) {
+            <img class="done" src="icons/input-done.svg" alt="" width="27" height="32" />
+          }
+        </div>
         <p class="error" id="contact-email-error" aria-live="polite">
           @if (showError('email')) {
             {{ 'contact.emailError' | translate }}
@@ -62,14 +75,19 @@
 
     <div class="field">
       <label for="contact-message">{{ 'contact.message' | translate }}</label>
-      <textarea
-        id="contact-message"
-        formControlName="message"
-        [placeholder]="'contact.messagePlaceholder' | translate"
-        [class.invalid]="showError('message')"
-        [attr.aria-invalid]="showError('message')"
-        aria-describedby="contact-message-error"
-      ></textarea>
+      <div class="input-wrap">
+        <textarea
+          id="contact-message"
+          formControlName="message"
+          [placeholder]="'contact.messagePlaceholder' | translate"
+          [class.invalid]="showError('message')"
+          [attr.aria-invalid]="showError('message')"
+          aria-describedby="contact-message-error"
+        ></textarea>
+        @if (isDone('message')) {
+          <img class="done" src="icons/input-done.svg" alt="" width="27" height="32" />
+        }
+      </div>
       <p class="error" id="contact-message-error" aria-live="polite">
         @if (showError('message')) {
           {{ 'contact.messageError' | translate }}

@@ -6,6 +6,25 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# gabriele-lerch.de und www-Varianten dauerhaft auf die Hauptdomain umleiten
+[[redirects]]
+  from = "https://gabriele-lerch.de/*"
+  to = "https://gabriele-lerch.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.gabriele-lerch.de/*"
+  to = "https://gabriele-lerch.dev/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.gabriele-lerch.dev/*"
+  to = "https://gabriele-lerch.dev/:splat"
+  status = 301
+  force = true
+
 # Angular-Routing: Unterseiten wie /impressum funktionieren auch beim Neuladen
 [[redirects]]
   from = "/*"

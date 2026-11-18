@@ -36,6 +36,12 @@ export class Contact {
     return control.invalid && control.touched;
   }
 
+  /** Figma "done": Haken im Feld, wenn die Eingabe gültig ist */
+  protected isDone(field: 'name' | 'email' | 'message'): boolean {
+    const control = this.form.controls[field];
+    return control.valid && control.touched;
+  }
+
   protected submit(): void {
     if (this.form.invalid || this.state() === 'sending') {
       this.form.markAllAsTouched();

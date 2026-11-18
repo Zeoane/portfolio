@@ -18,7 +18,14 @@ export class SocialLinks {
   readonly order = input<'hero' | 'footer'>('hero');
   protected readonly links = LINKS;
 
-  protected icon(name: string): string {
-    return this.variant() === 'dark' ? `icons/${name}-dark.svg` : `icons/${name}.svg`;
+  /** Icon-Datei, z. B. icons/github.svg oder icons/github-dark-hover.svg */
+  protected icon(name: string, hover = false): string {
+    const dark = this.variant() === 'dark' ? '-dark' : '';
+    return `icons/${name}${dark}${hover ? '-hover' : ''}.svg`;
+  }
+
+  protected href(name: string): string {
+    if (name === 'email') return 'mailto:' + this.links.email;
+    return name === 'github' ? this.links.github : this.links.linkedin;
   }
 }

@@ -7,26 +7,37 @@
   flex-direction: column;
 }
 
+// Figma: Beim Hover wird das Icon gefüllt (blau im Hero, creme im Footer)
 a {
+  position: relative;
   display: block;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-
-  &:hover {
-    transform: scale(1.15);
-  }
 }
 
 img {
   display: block;
+  transition: opacity 0.2s ease;
 }
 
-:host(.dark) a {
-  opacity: 0.6;
+.icon-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
 
-  &:hover {
+a:hover,
+a:focus-visible {
+  .icon-hover {
     opacity: 1;
   }
+
+  .icon-default {
+    opacity: 0;
+  }
+}
+
+:host(.dark) .icon-default {
+  opacity: 0.6;
 }

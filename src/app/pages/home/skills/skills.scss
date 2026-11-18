@@ -106,15 +106,36 @@ h2 {
   flex-shrink: 0;
   width: 380px;
   height: 380px;
+  position: relative;
+  z-index: 0;
   padding: 81px 36px 0;
-  background: url('/icons/learning-bg.svg') center / contain no-repeat;
   text-align: center;
+
+  // Form als eigene Ebene, damit sie sich beim Hover drehen kann (Figma: Skill Ellipse hover)
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: rgba($color-blue, 0.07);
+    -webkit-mask: url('/icons/learning-shape.svg') center / contain no-repeat;
+    mask: url('/icons/learning-shape.svg') center / contain no-repeat;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+  }
+
+  &:hover::before {
+    background: rgba($color-blue, 0.2);
+    transform: rotate(-45deg);
+  }
 
   @include mobile {
     width: 100%;
     height: auto;
     padding: 0;
-    background: none;
+
+    &::before {
+      display: none;
+    }
   }
 }
 

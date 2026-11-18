@@ -13,7 +13,12 @@
     </a>
     <nav class="nav" [attr.aria-label]="'nav.main' | translate">
       @for (item of navItems; track item.fragment) {
-        <a routerLink="/" [fragment]="item.fragment">{{ item.label | translate }}</a>
+        <a
+          routerLink="/"
+          [fragment]="item.fragment"
+          [class.active]="activeFragment() === item.fragment"
+          [attr.aria-current]="activeFragment() === item.fragment ? 'location' : null"
+        >{{ item.label | translate }}</a>
       }
     </nav>
     <ng-container *ngTemplateOutlet="langToggle" />
