@@ -27,7 +27,7 @@ export const ALL_PROJECTS: Project[] = [
     technologies: ['angular', 'typescript', 'html', 'css'],
     screenshot: '',
     liveUrl: 'https://dabubble.gabriele-lerch.dev',
-    githubUrl: 'https://github.com/Zeoane',
+    githubUrl: 'https://github.com/Zeoane/DABubble',
     show: true,
   },
   {
@@ -55,7 +55,7 @@ export const ALL_PROJECTS: Project[] = [
     technologies: ['javascript', 'html', 'css'],
     screenshot: '',
     liveUrl: 'https://pollo-loco.gabriele-lerch.dev',
-    githubUrl: 'https://github.com/Zeoane',
+    githubUrl: 'https://github.com/Zeoane/el-pollo-loco',
     show: true,
   },
   {
