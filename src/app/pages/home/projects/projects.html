@@ -73,7 +73,7 @@
 
         <div class="screenshot">
           @if (project.screenshot) {
-            <img [src]="project.screenshot" [alt]="'projects.screenshotAlt' | translate: { name: project.name }" width="960" height="540" loading="lazy" />
+            <img [src]="project.screenshot" [alt]="'projects.screenshotAlt' | translate: { name: project.name }" width="960" height="640" loading="lazy" />
           } @else {
             <span>{{ (project.ongoing ? 'projects.ongoingScreenshot' : 'projects.screenshotMissing') | translate }}</span>
           }
