@@ -41,7 +41,7 @@ export const ALL_PROJECTS: Project[] = [
   },
   {
     key: 'cuisine',
-    name: 'Code à la Cuisine',
+    name: 'Code à Cuisine',
     technologies: ['angular', 'typescript', 'rest-api'],
     screenshot: 'img/project-cuisine.webp',
     liveUrl: 'https://cuisine.gabriele-lerch.dev',
@@ -63,7 +63,7 @@ export const ALL_PROJECTS: Project[] = [
     name: 'KanMind',
     technologies: ['python', 'django', 'drf', 'rest-api'],
     screenshot: 'img/project-kanmind.webp',
-    // Backend-Projekt, das Frontend kommt von der Developer Akademie. Links eintragen, sobald vorhanden.
+    // Backend-Projekt, das Frontend war vorgegeben. Links eintragen, sobald vorhanden.
     liveUrl: '',
     githubUrl: '',
     show: true,

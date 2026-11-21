@@ -18,5 +18,5 @@ export interface Reference {
 export const REFERENCES: Reference[] = [
   { key: 'r1', project: 'DABubble', linkedinUrl: '' },
   { key: 'r2', project: 'Join', linkedinUrl: '' },
-  { key: 'r3', project: 'Code à la Cuisine', linkedinUrl: '' },
+  { key: 'r3', project: 'Code à Cuisine', linkedinUrl: '' },
 ];

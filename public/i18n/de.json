@@ -20,8 +20,8 @@
   },
   "whyMe": {
     "title": "Warum ich",
-    "locationPrefix": "Ich bin",
-    "locationText": "remote in Deutschland tätig",
+    "locationPrefix": "Ich wohne",
+    "locationText": "in München",
     "text1": "Ich liebe es, aus einer Idee etwas zu bauen, das Menschen wirklich nutzen.",
     "text2": "Vor dem Programmieren habe ich in sozialen Einrichtungen und der Gastronomie gearbeitet. Daher weiß ich, wie wichtig einfache, verständliche Oberflächen sind. Ich arbeite strukturiert, denke analytisch und bleibe dran, bis ein Problem gelöst ist, am liebsten im Team.",
     "button": "Lass uns reden"
@@ -44,37 +44,37 @@
     "screenshotAlt": "Screenshot von {{name}}",
     "screenshotMissing": "Screenshot folgt",
     "dabubble": {
-      "duration": "[? Wochen]",
+      "duration": "4 Wochen",
       "about": "DABubble ist ein Messenger nach dem Vorbild von Slack. Teams schreiben in Kanälen, per Direktnachricht und in Threads, alles in Echtzeit.",
       "organisation": "Ich habe die Oberfläche in wiederverwendbare Angular-Komponenten zerlegt und die Daten in Services gebündelt. Klare Namen und kurze Funktionen machen den Code für das ganze Team lesbar.",
-      "teamwork": "[ENTWURF] Wir haben die App zu dritt gebaut. Meine Aufgaben waren unter anderem die Anmeldung und die Kanalansicht. Wir haben mit Git-Branches und regelmäßigen Absprachen gearbeitet."
+      "teamwork": "DABubble habe ich allein umgesetzt, aber so organisiert wie in einem Team: Jede Funktion entstand in einem eigenen Branch und kam per Pull Request auf GitHub in den Hauptzweig, über 40 Pull Requests insgesamt. Feedback aus dem Mentor-Review habe ich in eigenen Fix-Branches eingearbeitet."
     },
     "join": {
-      "duration": "[? Wochen]",
-      "about": "Join ist ein Kanban-Board zur Aufgabenverwaltung mit Drag & Drop. In meiner Version werten n8n-Workflows eingehende E-Mails automatisch aus und legen daraus Aufgaben an.",
+      "duration": "5 Wochen",
+      "about": "Der Join Issue Collector ist ein Kanban-Board mit E-Mail-Automatisierung. Wer eine E-Mail an Join schreibt, bekommt über einen n8n-Workflow automatisch eine Aufgabe in einer eigenen Spalte auf dem Board, die ein Moderator dann weiterbearbeitet. Als Gast lassen sich bis zu 10 Anfragen pro Tag stellen, mit Konto kann man Aufgaben anlegen, bearbeiten und per Drag & Drop verschieben.",
       "organisation": "Funktionen sind in eigene Dateien nach Bereichen getrennt (Board, Kontakte, Dashboard). Daten liegen in Firebase, sodass Änderungen sofort für alle sichtbar sind.",
-      "teamwork": "[ENTWURF] Das Grundprojekt entstand im Team. Ich habe unter anderem das Board mit Drag & Drop umgesetzt und die E-Mail-Automatisierung mit n8n ergänzt."
+      "teamwork": "Das ursprüngliche Join haben wir zu dritt gebaut und die Aufgaben über ein Trello-Board verteilt. Den Issue Collector mit der n8n-Automatisierung habe ich darauf aufbauend allein entwickelt und so dokumentiert, dass andere ihn nachvollziehen und selbst einrichten können."
     },
     "cuisine": {
-      "duration": "[? Wochen]",
-      "about": "Code à la Cuisine schlägt aus den Zutaten, die gerade im Kühlschrank sind, passende Rezepte vor. Die Vorschläge erzeugt eine KI.",
+      "duration": "3 Wochen",
+      "about": "Code à Cuisine schlägt aus den Zutaten, die gerade im Kühlschrank sind, passende Rezepte vor. Die Vorschläge erzeugt eine KI.",
       "organisation": "Ich habe das Projekt mit TypeScript typsicher aufgebaut und die Anfrage an die KI in einem eigenen Modul gekapselt, damit sie leicht austauschbar ist.",
-      "teamwork": "[ENTWURF] Wir haben uns Aufgaben über ein Kanban-Board aufgeteilt. Ich war unter anderem für die Zutatenauswahl und die Rezeptansicht zuständig."
+      "teamwork": "Code à Cuisine habe ich allein umgesetzt. Frontend und n8n-Workflows sind sauber getrennt, sodass beide Teile unabhängig voneinander weiterentwickelt werden können."
     },
     "pollo": {
-      "duration": "[? Wochen]",
+      "duration": "3 Wochen",
       "about": "El Pollo Loco ist ein kurzweiliges Jump-and-Run-Spiel: Pepe springt über Hühner, sammelt Münzen und Flaschen und tritt am Ende gegen das Riesenhuhn an.",
-      "organisation": "Das Spiel ist objektorientiert aufgebaut. Jede Spielfigur ist eine eigene Klasse, die von gemeinsamen Basisklassen erbt. Gezeichnet wird mit dem HTML-Canvas.",
-      "teamwork": "[ENTWURF] Dieses Projekt habe ich allein umgesetzt. Feedback aus Code-Reviews habe ich genutzt, um Kollisionsabfrage und Animationen zu verbessern."
+      "organisation": "Das Spiel ist objektorientiert aufgebaut: Jede Figur ist eine eigene Klasse, die von gemeinsamen Basisklassen erbt. Ein Game Loop aktualisiert und zeichnet alle Objekte auf dem HTML-Canvas, Kollisionen prüfe ich mit Bounding Boxes (AABB), und Zustandsautomaten steuern Bewegungen und Animationen.",
+      "teamwork": "El Pollo Loco habe ich allein umgesetzt. Dank der klaren Klassenstruktur lassen sich neue Gegner oder Objekte ergänzen, ohne bestehenden Code umzubauen."
     },
     "ongoing": "in Arbeit",
     "ongoingScreenshot": "Aktuelles Projekt, Screenshot folgt",
     "linksSoon": "Live-Test und GitHub folgen, sobald das Projekt fertig ist.",
     "kanmind": {
       "duration": "läuft gerade",
-      "about": "KanMind ist ein Projektmanagement-Tool mit Kanban-Boards. Das Frontend stellt die Developer Akademie bereit, ich entwickle das Backend: eine REST-API, die Boards, Aufgaben und Kommentare speichert und das Frontend nahtlos mit den Daten verbindet.",
-      "organisation": "[ENTWURF] Ich plane die Datenmodelle zuerst, baue die API mit Django REST Framework in klar getrennten Apps auf und sichere jeden Endpunkt mit Berechtigungen ab. Tests begleiten jede neue Funktion.",
-      "teamwork": "[ENTWURF] Dieses Projekt setze ich allein um. Die Schnittstellen richte ich an der vorgegebenen API-Dokumentation aus, damit das Frontend der Developer Akademie ohne Anpassungen funktioniert."
+      "about": "KanMind ist ein Projektmanagement-Tool mit Kanban-Boards. Das Frontend war vorgegeben, ich entwickle das Backend: eine REST-API, die Boards, Aufgaben und Kommentare verwaltet und Frontend und Backend nahtlos miteinander verbindet.",
+      "organisation": "Ich plane die Datenmodelle zuerst, baue die API mit Django REST Framework in klar getrennten Apps auf und sichere jeden Endpunkt mit Berechtigungen ab. Tests begleiten jede neue Funktion.",
+      "teamwork": "Dieses Projekt setze ich allein um. Die Endpunkte richte ich genau an der vorgegebenen API-Dokumentation aus, damit das bestehende Frontend ohne Anpassungen funktioniert."
     }
   },
   "references": {
