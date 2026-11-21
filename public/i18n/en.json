@@ -22,8 +22,8 @@
     "title": "Why me",
     "locationPrefix": "I am located",
     "locationText": "in Munich",
-    "text1": "I love turning an idea into something people actually use.",
-    "text2": "Before coding, I worked in social services and hospitality, so I know how much simple, clear interfaces matter. I work in a structured way, think analytically and keep going until a problem is solved, ideally as part of a team.",
+    "text1": "I focus on building and understanding software that works reliably in everyday practice. With many years of operational management experience in healthcare and senior care facilities as well as technical customer support, I know firsthand where friction occurs when systems are unclear or workflows break down.",
+    "text2": "I work in a structured way, analyze issues methodically, and stay on a problem independently until it is properly resolved.",
     "button": "Let's talk"
   },
   "skills": {
@@ -46,7 +46,7 @@
     "dabubble": {
       "duration": "4 weeks",
       "about": "DABubble is a messenger inspired by Slack. Teams chat in channels, via direct messages and in threads, all in real time.",
-      "organisation": "I split the interface into reusable Angular components and bundled the data logic in services. Clear names and short functions keep the code readable for the whole team.",
+      "organisation": "I split the interface into reusable Angular components and bundled the data logic in services. Clear names and short functions keep the code easy to read for other developers too.",
       "teamwork": "I built DABubble on my own, but organised it like a team project: every feature was developed in its own branch and merged into the main branch via pull request on GitHub, more than 40 pull requests in total. I worked in the feedback from my mentor review in separate fix branches."
     },
     "join": {
@@ -98,8 +98,8 @@
   },
   "contact": {
     "title": "Contact me",
-    "intro1": "Do you have an exciting project or are you looking for support for your frontend team? I look forward to hearing from you.",
-    "intro2": "I am interested in positions as a frontend developer, remote or hybrid, and in freelance projects with Angular or TypeScript.",
+    "intro1": "Are you looking for reinforcement in Application Support, 2nd-Level Support, or your Frontend team? I look forward to hearing from you.",
+    "intro2": "I am currently looking for a permanent position (remote or hybrid) where I can apply my technical understanding of web technologies, APIs, and structured troubleshooting.",
     "letsWork": "Let us work together!",
     "emailLabel": "E-mail",
     "name": "Your name",

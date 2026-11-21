@@ -38,6 +38,12 @@ h2 {
   display: flex;
   gap: 8px;
 
+  // Zwischengrößen: Tabs werden kleiner und notfalls seitlich scrollbar statt die Seite zu verbreitern
+  @include tablet {
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
   @include mobile {
     justify-content: space-between;
     gap: 0;
@@ -63,7 +69,16 @@ h2 {
     color: $color-creme;
   }
 
+  @include tablet {
+    flex-shrink: 0;
+    padding: 18px 18px 14px;
+    font-size: clamp(18px, 2.6vw, 30px);
+    white-space: nowrap;
+  }
+
   @include mobile {
+    flex-shrink: 1;
+    white-space: normal;
     padding: 9px 6px 8px;
     border-radius: 20px 20px 0 0;
     color: $color-creme;

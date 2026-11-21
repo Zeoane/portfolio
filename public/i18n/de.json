@@ -22,9 +22,9 @@
     "title": "Warum ich",
     "locationPrefix": "Ich wohne",
     "locationText": "in München",
-    "text1": "Ich liebe es, aus einer Idee etwas zu bauen, das Menschen wirklich nutzen.",
-    "text2": "Vor dem Programmieren habe ich in sozialen Einrichtungen und der Gastronomie gearbeitet. Daher weiß ich, wie wichtig einfache, verständliche Oberflächen sind. Ich arbeite strukturiert, denke analytisch und bleibe dran, bis ein Problem gelöst ist, am liebsten im Team.",
-    "button": "Lass uns reden"
+    "text1": "Ich entwickle und verstehe Software gerne von Grund auf – mit dem Anspruch, dass sie im Alltag zuverlässig funktioniert. Durch meine langjährige Erfahrung in der Betriebsleitung von Gesundheits- und Pflegeeinrichtungen sowie im technischen Kundensupport weiß ich genau, wo es in der Praxis hakt, wenn Systeme unübersichtlich sind oder Prozesse stocken.",
+    "text2": "Ich arbeite strukturiert, gehe Fehlern analytisch auf den Grund und bleibe eigenständig dran, bis eine saubere Lösung steht.",
+    "button": "Lassen Sie uns reden"
   },
   "skills": {
     "title": "Meine Skills",
@@ -46,7 +46,7 @@
     "dabubble": {
       "duration": "4 Wochen",
       "about": "DABubble ist ein Messenger nach dem Vorbild von Slack. Teams schreiben in Kanälen, per Direktnachricht und in Threads, alles in Echtzeit.",
-      "organisation": "Ich habe die Oberfläche in wiederverwendbare Angular-Komponenten zerlegt und die Daten in Services gebündelt. Klare Namen und kurze Funktionen machen den Code für das ganze Team lesbar.",
+      "organisation": "Ich habe die Oberfläche in wiederverwendbare Angular-Komponenten zerlegt und die Daten in Services gebündelt. Klare Namen und kurze Funktionen machen den Code auch für andere Entwickler gut lesbar.",
       "teamwork": "DABubble habe ich allein umgesetzt, aber so organisiert wie in einem Team: Jede Funktion entstand in einem eigenen Branch und kam per Pull Request auf GitHub in den Hauptzweig, über 40 Pull Requests insgesamt. Feedback aus dem Mentor-Review habe ich in eigenen Fix-Branches eingearbeitet."
     },
     "join": {
@@ -98,27 +98,27 @@
   },
   "contact": {
     "title": "Kontakt",
-    "intro1": "Du hast ein spannendes Projekt oder suchst Verstärkung für dein Frontend-Team? Ich freue mich über deine Nachricht.",
-    "intro2": "Ich interessiere mich für Stellen als Frontend-Entwicklerin, gern remote oder hybrid, und für Freelance-Projekte mit Angular oder TypeScript.",
-    "letsWork": "Lass uns zusammenarbeiten!",
+    "intro1": "Suchen Sie Verstärkung im Application Support, 2nd-Level-Support oder für Ihr Frontend-Team? Ich freue mich über Ihre Nachricht.",
+    "intro2": "Aktuell bin ich auf der Suche nach einer Festanstellung (remote oder hybrid), in der ich mein technisches Verständnis für Webtechnologien, Schnittstellen (REST-APIs) und strukturierte Fehleranalyse einbringen kann.",
+    "letsWork": "Lassen Sie uns zusammenarbeiten!",
     "emailLabel": "E-Mail",
-    "name": "Dein Name",
-    "email": "Deine E-Mail",
-    "message": "Deine Nachricht",
-    "namePlaceholder": "Dein Name",
-    "emailPlaceholder": "deine@email.de",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "message": "Ihre Nachricht",
+    "namePlaceholder": "Ihr Name",
+    "emailPlaceholder": "name@beispiel.de",
     "messagePlaceholder": "Hallo Gabriele, ich interessiere mich für …",
-    "nameError": "Bitte gib deinen Namen ein.",
-    "emailError": "Bitte gib eine gültige E-Mail-Adresse ein.",
-    "messageError": "Bitte schreib mir eine Nachricht (mindestens 10 Zeichen).",
+    "nameError": "Bitte geben Sie Ihren Namen ein.",
+    "emailError": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "messageError": "Bitte schreiben Sie mir eine Nachricht (mindestens 10 Zeichen).",
     "privacyBefore": "Ich habe die",
     "privacyLink": "Datenschutzerklärung",
     "privacyAfter": "gelesen und bin mit der Verarbeitung meiner Daten wie beschrieben einverstanden.",
-    "privacyError": "Bitte stimme der Datenschutzerklärung zu.",
+    "privacyError": "Bitte stimmen Sie der Datenschutzerklärung zu.",
     "send": "Senden",
     "sending": "Wird gesendet …",
-    "success": "Danke für deine Nachricht! Ich melde mich so schnell wie möglich.",
-    "failure": "Das hat leider nicht geklappt. Bitte versuch es später noch einmal oder schreib mir direkt eine E-Mail."
+    "success": "Danke für Ihre Nachricht! Ich melde mich so schnell wie möglich.",
+    "failure": "Das hat leider nicht geklappt. Bitte versuchen Sie es später noch einmal oder schreiben Sie mir direkt eine E-Mail."
   },
   "footer": {
     "legalNotice": "Impressum",
