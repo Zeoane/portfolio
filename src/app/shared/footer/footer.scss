@@ -37,16 +37,22 @@
   @include mobile {
     order: 3;
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 24px;
-    font-size: 14px;
+    // DE und EN in einer Zeile, gleiche Schriftgröße; auf sehr schmalen
+    // Handys schrumpfen Schrift und Abstände leicht mit
+    gap: clamp(10px, 4vw, 16px);
+    font-size: clamp(11px, 3.5vw, 14px);
+    white-space: nowrap;
   }
 }
 
 .legal-links {
   display: flex;
   gap: 24px;
+
+  @include mobile {
+    gap: clamp(10px, 4vw, 16px);
+  }
 
   a {
     transition: color 0.2s ease;
