@@ -50,7 +50,7 @@
           <p>{{ 'projects.' + project.key + '.about' | translate }}</p>
         </article>
         <article>
-          <h3><img src="icons/bullet.svg" alt="" width="29" height="26" />{{ 'projects.organisation' | translate }}</h3>
+          <h3><img src="icons/bullet.svg" alt="" width="29" height="26" />{{ (project.ongoing ? 'projects.organisationOngoing' : 'projects.organisation') | translate }}</h3>
           <p>{{ 'projects.' + project.key + '.organisation' | translate }}</p>
         </article>
         <article>
