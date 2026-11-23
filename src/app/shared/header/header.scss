@@ -174,15 +174,17 @@
 .mobile-menu {
   position: absolute;
   z-index: 1;
-  top: 80px;
+  // Figma (Overlay 353 x 370): liegt genau über Foto und blauer Form im Hero,
+  // schließt oben und unten bündig mit dem Foto ab (y 122 bis 492) und ist etwas größer als die Form (311 x 326) dahinter
+  top: 122px;
   left: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  width: min(354px, calc(100vw - 32px));
-  aspect-ratio: 354 / 370;
-  padding-top: 52px;
+  width: 353px;
+  height: 370px;
+  padding-top: 45px;
   background: url('/icons/overlay-bg.svg') center / 100% 100% no-repeat;
   transform: translateX(-50%);
   animation: menu-in 0.25s ease;

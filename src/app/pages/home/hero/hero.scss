@@ -18,6 +18,9 @@
   // Mobil exakt nach Figma (9_Mobile): Hero endet mit dem Pfeil bei 706px
   @include mobile {
     height: auto;
+    // das geöffnete Menü (353px breit) darf auf sehr schmalen Handys
+    // seitlich angeschnitten werden, ohne horizontales Scrollen auszulösen
+    overflow-x: clip;
   }
 }
 
