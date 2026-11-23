@@ -4,16 +4,19 @@
 // (1440 x 900: 91px Luft oben, Bühne 1214 x 705, Menüleiste 104px).
 // --u ist "ein Figma-Pixel": so groß, dass die Bühne in Breite UND Höhe passt.
 // Foto, Name, Abstände und Pfeil wachsen und schrumpfen dadurch gemeinsam.
-// Auf Bildschirmen ab 16:10 (z. B. 1440x900, 1920x1080, 1366x768) ist der Hero
-// genau 100vh hoch. Auf höheren Fenstern endet er unter der Bühne, statt leere
-// Fläche zu zeigen. Für immer 100vh: am .hero "min-height: 100svh" ergänzen.
+// Der Hero ist immer 100vh hoch (DA-Checkliste). Querformat: Bühne sitzt unten
+// auf der Menüleiste. Hohe Fenster (schmaler als 13:10, z. B. Tablet hochkant):
+// Name oben, Foto groß darunter, siehe "Hohe Fenster" am Ende der Datei.
 .hero {
   --u: min(100vw / 1440, (100svh - 104px) / 796, 1.6px);
 
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  height: 100svh;
 
   @include mobile {
+    height: auto;
     min-height: 100svh;
   }
 }
@@ -233,5 +236,49 @@
 
   @include mobile {
     display: none;
+  }
+}
+
+// ---------- Hohe Fenster (601px+, schmaler als 13:10) ----------
+// Nebeneinander bliebe hier viel leere Fläche über dem Foto. Deshalb stehen
+// Logo, Name und Pfeil oben, das Foto groß darunter auf der Menüleiste.
+@media (min-width: 601px) and (max-aspect-ratio: 13 / 10) {
+  .hero {
+    --u: min(100vw / 900, (100svh - 104px) / 1150, 1.6px);
+  }
+
+  .stage {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    padding-top: calc(60 * var(--u));
+  }
+
+  .intro {
+    order: -1;
+    padding: 0;
+  }
+
+  .scroll-down {
+    margin-top: calc(40 * var(--u));
+  }
+
+  .portrait {
+    align-self: center;
+    margin-top: auto;
+    width: calc(535 * var(--u));
+    height: calc(683 * var(--u));
+  }
+
+  .social {
+    position: absolute;
+    top: calc(60 * var(--u));
+    right: 32px;
+    margin: 0;
   }
 }
