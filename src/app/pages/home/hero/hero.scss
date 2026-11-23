@@ -55,8 +55,18 @@
   height: calc(100% - 22px);
   max-height: 683px;
 
+  // Tablet: Box hat genau das Seitenverhältnis des Fotos, damit die blaue Form
+  // hinter dem Kopf bleibt (sonst sitzt das Foto unten und die Form schwebt darüber)
+  @include tablet {
+    height: auto;
+    aspect-ratio: 900 / 1096;
+    // auf niedrigen Bildschirmen nicht höher als die Bühne (Menüleiste ca. 104px + 22px Abstand)
+    width: min(100%, calc((100svh - 126px) * 900 / 1096));
+  }
+
   @include mobile {
     align-self: center;
+    aspect-ratio: auto;
     width: 267px;
     height: 370px;
     margin-top: 23px;
