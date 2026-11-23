@@ -1,17 +1,20 @@
 @use 'tokens' as *;
 
+// Ab 601px skaliert die ganze Hero-Bühne proportional zur Figma-Vorlage
+// (1440 x 900: 91px Luft oben, Bühne 1214 x 705, Menüleiste 104px).
+// --u ist "ein Figma-Pixel": so groß, dass die Bühne in Breite UND Höhe passt.
+// Foto, Name, Abstände und Pfeil wachsen und schrumpfen dadurch gemeinsam.
+// Auf Bildschirmen ab 16:10 (z. B. 1440x900, 1920x1080, 1366x768) ist der Hero
+// genau 100vh hoch. Auf höheren Fenstern endet er unter der Bühne, statt leere
+// Fläche zu zeigen. Für immer 100vh: am .hero "min-height: 100svh" ergänzen.
 .hero {
+  --u: min(100vw / 1440, (100svh - 104px) / 796, 1.6px);
+
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  height: 100svh;
-  min-height: 560px;
-  overflow: hidden;
 
   @include mobile {
-    height: auto;
     min-height: 100svh;
-    overflow: visible;
   }
 }
 
@@ -26,28 +29,24 @@
 // Bühne: Foto links, Name rechts, Social-Icons ganz rechts (Figma: 1214 x 705)
 .stage {
   position: relative;
-  flex: 1;
   display: grid;
-  grid-template-columns: 25px minmax(0, 535px) minmax(0, 1fr) 30px;
-  // Foto und Intro bilden eine Einheit (Figma-Bühne 705px hoch) und sitzen
-  // gemeinsam unten über der Menüleiste, auch auf sehr hohen Bildschirmen
-  grid-template-rows: minmax(0, 705px);
-  align-content: end;
-  width: 100%;
-  max-width: 1214px;
-  min-height: 0;
-  margin: 0 auto;
+  grid-template-columns: calc(25 * var(--u)) calc(535 * var(--u)) minmax(0, 1fr) calc(30 * var(--u));
+  grid-template-rows: 100%;
+  box-sizing: border-box;
+  width: calc(1214 * var(--u));
+  height: calc(796 * var(--u));
+  margin: auto auto 0;
+  padding-top: calc(91 * var(--u));
 
-  @include tablet {
-    grid-template-columns: 0 minmax(0, 45%) minmax(0, 1fr) 30px;
-    grid-template-rows: auto;
-    padding: 0 32px;
-  }
-
+  // Mobil: Foto, Name und Pfeil untereinander, mittig auf der Bildschirmhöhe
   @include mobile {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
     padding: 0 16px 48px;
   }
 }
@@ -57,21 +56,10 @@
   grid-column: 2;
   position: relative;
   align-self: end;
-  height: calc(100% - 22px);
-  max-height: 683px;
-
-  // Tablet: Box hat genau das Seitenverhältnis des Fotos, damit die blaue Form
-  // hinter dem Kopf bleibt (sonst sitzt das Foto unten und die Form schwebt darüber)
-  @include tablet {
-    height: auto;
-    aspect-ratio: 900 / 1096;
-    // auf niedrigen Bildschirmen nicht höher als die Bühne (Menüleiste ca. 104px + 22px Abstand)
-    width: min(100%, calc((100svh - 126px) * 900 / 1096));
-  }
+  height: calc(683 * var(--u));
 
   @include mobile {
     align-self: center;
-    aspect-ratio: auto;
     width: 267px;
     height: 370px;
     margin-top: 23px;
@@ -142,45 +130,57 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: clamp(24px, 17vh - 20px, 121px);
-  padding-left: 80px;
+  padding-top: calc(121 * var(--u));
+  padding-left: calc(80 * var(--u));
   text-align: center;
-
-  @include tablet {
-    padding-left: 24px;
-  }
 
   @include mobile {
     padding: 24px 0 0;
   }
 
   h1 {
-    margin-top: clamp(12px, 5vh - 10px, 37px);
-    font-size: clamp(48px, 6.1vw, $fs-h1);
+    margin-top: calc(37 * var(--u));
+    font-size: calc(88 * var(--u)); // Figma: 88px ($fs-h1);
     color: $color-creme;
     white-space: nowrap;
 
     @include mobile {
       margin-top: 0;
-      font-size: 48px;
+      font-size: clamp(36px, 13vw, 48px);
       white-space: normal;
     }
   }
 
   .role {
-    margin-top: 11px;
-    font-size: clamp(24px, 2.8vw, 40px);
+    margin-top: calc(11 * var(--u));
+    font-size: calc(40 * var(--u));
     color: $color-creme;
     white-space: nowrap;
 
     @include mobile {
       margin-top: 4px;
-      font-size: 24px;
+      font-size: clamp(18px, 6.6vw, 24px);
+      white-space: normal;
     }
   }
 }
 
+// Logo wächst mit der Bühne mit (Figma: 66px breit)
 .intro-logo {
+  width: calc(66 * var(--u));
+
+  ::ng-deep {
+    .icon {
+      width: calc(32 * var(--u));
+      height: calc(38 * var(--u));
+    }
+
+    .name,
+    .sub {
+      font-size: calc(16 * var(--u));
+    }
+  }
+
   @include mobile {
     display: none;
   }
@@ -188,16 +188,18 @@
 
 .scroll-down {
   display: block;
-  margin-top: clamp(24px, 20vh - 40px, 145px);
+  margin-top: calc(145 * var(--u));
   // Rahmen per CSS statt im SVG: CSS-Rahmen rastet auf ganze Bildschirmpixel ein,
   // dadurch wirken die geraden Seiten nicht mehr heller/verwaschen.
   position: relative;
-  width: 38px;
-  height: 89px;
-  border-radius: 19px;
+  width: calc(38 * var(--u));
+  height: calc(89 * var(--u));
+  border-radius: calc(19 * var(--u));
 
   img {
     display: block;
+    width: 100%;
+    height: 100%;
   }
 
   &::after {
@@ -217,6 +219,9 @@
 
   @include mobile {
     margin-top: 32px;
+    width: 38px;
+    height: 89px;
+    border-radius: 19px;
   }
 }
 
@@ -224,7 +229,7 @@
 .social {
   grid-column: 4;
   align-self: start;
-  margin-top: 68px;
+  margin-top: calc(68 * var(--u));
 
   @include mobile {
     display: none;

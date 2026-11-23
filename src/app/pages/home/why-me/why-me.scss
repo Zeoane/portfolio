@@ -47,6 +47,10 @@ h2 {
   margin-top: 8px;
   font-size: 30px;
 
+  @include tablet {
+    font-size: clamp(20px, 3vw, 30px);
+  }
+
   @include mobile {
     margin-top: 0;
     font-size: 18px;
@@ -117,6 +121,12 @@ h2 {
   gap: 8px;
   width: 379px;
   flex-shrink: 0;
+
+  @include tablet {
+    flex: 0 1 379px;
+    width: auto;
+    min-width: 0;
+  }
 
   @include mobile {
     width: 100%;

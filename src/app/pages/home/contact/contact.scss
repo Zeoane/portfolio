@@ -63,7 +63,8 @@
   top: -8px;
   right: -98px;
 
-  @include tablet {
+  // erst ab 1240px ist rechts genug Platz für den Pfeil neben dem Inhalt
+  @media (max-width: 1240px) {
     right: 0;
   }
 
