@@ -7,7 +7,7 @@
 
   @include mobile {
     width: min(344px, 100% - 32px);
-    padding-top: 64px;
+    padding-top: 80px; // Figma mobil: 80px über der Überschrift
   }
 }
 

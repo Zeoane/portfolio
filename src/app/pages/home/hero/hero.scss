@@ -15,9 +15,9 @@
   height: 100vh;
   height: 100svh;
 
+  // Mobil exakt nach Figma (9_Mobile): Hero endet mit dem Pfeil bei 706px
   @include mobile {
     height: auto;
-    min-height: 100svh;
   }
 }
 
@@ -43,14 +43,13 @@
 
   // Mobil: Foto, Name und Pfeil untereinander, mittig auf der Bildschirmhöhe
   @include mobile {
-    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 100%;
     height: auto;
-    padding: 0 16px 48px;
+    margin: 0;
+    padding: 0 16px;
   }
 }
 
@@ -65,7 +64,7 @@
     align-self: center;
     width: 267px;
     height: 370px;
-    margin-top: 23px;
+    margin-top: 21px; // Figma: Foto beginnt bei y 122
   }
 }
 
@@ -138,7 +137,7 @@
   text-align: center;
 
   @include mobile {
-    padding: 24px 0 0;
+    padding: 8px 0 0; // Figma: Name 8px unter dem Foto
   }
 
   h1 {
@@ -150,6 +149,7 @@
     @include mobile {
       margin-top: 0;
       font-size: clamp(36px, 13vw, 48px);
+      line-height: 1;
       white-space: normal;
     }
   }
@@ -161,7 +161,7 @@
     white-space: nowrap;
 
     @include mobile {
-      margin-top: 4px;
+      margin-top: 16px;
       font-size: clamp(18px, 6.6vw, 24px);
       white-space: normal;
     }
@@ -221,7 +221,7 @@
   }
 
   @include mobile {
-    margin-top: 32px;
+    margin-top: 24px;
     width: 38px;
     height: 89px;
     border-radius: 19px;
